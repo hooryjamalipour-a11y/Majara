@@ -1,0 +1,2991 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#05070b">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>استودیو کارگردانی زنده | PRISM LiveDeck Pro v7.1 APK</title>
+
+    <style>
+        :root {
+            --bg-950: #05070b;
+            --bg-900: #0a0e17;
+            --bg-800: #111827;
+            --border-800: #1e293b;
+            --border-700: #334155;
+            --text-100: #f1f5f9;
+            --text-300: #cbd5e1;
+            --text-400: #94a3b8;
+            --emerald-500: #10b981;
+            --emerald-600: #059669;
+            --blue-600: #2563eb;
+            --red-500: #ef4444;
+            --red-600: #dc2626;
+            --amber-500: #f59e0b;
+            --cyan-400: #22d3ee;
+        }
+        * {
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100dvh;
+            background-color: var(--bg-950);
+            color: var(--text-100);
+            font-family: system-ui, -apple-system, 'Segoe UI', Tahoma, Arial, sans-serif;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .font-mono {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        }
+        input, textarea, select {
+            user-select: text;
+            -webkit-user-select: text;
+            font-family: inherit;
+        }
+        button {
+            cursor: pointer;
+            font-family: inherit;
+            border: none;
+            color: inherit;
+        }
+        .hidden { display: none !important; }
+        .flex { display: flex; }
+        .inline-flex { display: inline-flex; }
+        .flex-col { flex-direction: column; }
+        .flex-wrap { flex-wrap: wrap; }
+        .flex-1 { flex: 1 1 0%; }
+        .shrink-0 { flex-shrink: 0; }
+        .items-center { align-items: center; }
+        .items-stretch { align-items: stretch; }
+        .justify-between { justify-content: space-between; }
+        .justify-center { justify-content: center; }
+        .grid { display: grid; }
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .col-span-2 { grid-column: span 2 / span 2; }
+        .gap-1 { gap: 0.25rem; }
+        .gap-1-5 { gap: 0.375rem; }
+        .gap-2 { gap: 0.5rem; }
+        .gap-3 { gap: 0.75rem; }
+        .gap-4 { gap: 1rem; }
+        .w-full { width: 100%; }
+        .h-full { height: 100%; }
+        .min-h-0 { min-height: 0; }
+        .min-w-0 { min-width: 0; }
+        .max-w-xs { max-width: 20rem; }
+        .max-w-xl { max-width: 36rem; }
+        .max-w-3xl { max-width: 48rem; }
+        .max-w-4xl { max-width: 56rem; }
+        .max-w-6xl { max-width: 72rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .my-auto { margin-top: auto; margin-bottom: auto; }
+        .p-2 { padding: 0.5rem; }
+        .p-2-5 { padding: 0.625rem; }
+        .p-3 { padding: 0.75rem; }
+        .p-4 { padding: 1rem; }
+        .p-5 { padding: 1.25rem; }
+        .px-1-5 { padding-left: 0.375rem; padding-right: 0.375rem; }
+        .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+        .px-2-5 { padding-left: 0.625rem; padding-right: 0.625rem; }
+        .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+        .px-3-5 { padding-left: 0.875rem; padding-right: 0.875rem; }
+        .py-0-5 { padding-top: 0.125rem; padding-bottom: 0.125rem; }
+        .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+        .py-1-5 { padding-top: 0.375rem; padding-bottom: 0.375rem; }
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .py-2-5 { padding-top: 0.625rem; padding-bottom: 0.625rem; }
+        .pb-6 { padding-bottom: 1.5rem; }
+        .pt-2 { padding-top: 0.5rem; }
+        .pt-3 { padding-top: 0.75rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mb-1 { margin-bottom: 0.25rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .rounded { border-radius: 0.25rem; }
+        .rounded-md { border-radius: 0.375rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-full { border-radius: 9999px; }
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .text-left { text-align: left; }
+        .truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .whitespace-nowrap { white-space: nowrap; }
+        .overflow-hidden { overflow: hidden; }
+        .overflow-y-auto { overflow-y: auto; }
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+        .inset-x-2 { left: 0.5rem; right: 0.5rem; }
+        .top-1-5 { top: 0.375rem; }
+        .top-2 { top: 0.5rem; }
+        .left-1-5 { left: 0.375rem; }
+        .z-10 { z-index: 10; }
+        .z-30 { z-index: 30; }
+        .z-40 { z-index: 40; }
+        .z-50 { z-index: 50; }
+        .pointer-events-none { pointer-events: none; }
+        .cursor-pointer { cursor: pointer; }
+        .space-y-1 > * + * { margin-top: 0.25rem; }
+        .space-y-1-5 > * + * { margin-top: 0.375rem; }
+        .space-y-2 > * + * { margin-top: 0.5rem; }
+        .space-y-2-5 > * + * { margin-top: 0.625rem; }
+        .space-y-3 > * + * { margin-top: 0.75rem; }
+        .space-y-4 > * + * { margin-top: 1rem; }
+        .space-y-5 > * + * { margin-top: 1.25rem; }
+        .text-[9px] { font-size: 9px; }
+        .text-[10px] { font-size: 10px; }
+        .text-[11px] { font-size: 11px; }
+        .text-xs { font-size: 0.75rem; line-height: 1rem; }
+        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+        .font-medium { font-weight: 500; }
+        .font-semibold { font-weight: 600; }
+        .font-bold { font-weight: 700; }
+        .font-black { font-weight: 900; }
+        .leading-5 { line-height: 1.25rem; }
+        .leading-relaxed { line-height: 1.625; }
+        .tracking-wider { letter-spacing: 0.05em; }
+        .tracking-widest { letter-spacing: 0.1em; }
+        .transition { transition: all 0.15s ease; }
+        .shadow { box-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5); }
+        .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.55); }
+        .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7); }
+
+        .bg-black { background-color: #000; }
+        .bg-black\/80 { background-color: rgba(0,0,0,0.8); }
+        .bg-black\/95 { background-color: rgba(0,0,0,0.95); }
+        .bg-studio-950 { background-color: var(--bg-950); }
+        .bg-studio-900 { background-color: var(--bg-900); }
+        .bg-studio-900\/95 { background-color: rgba(10,14,23,0.95); }
+        .bg-studio-900\/90 { background-color: rgba(10,14,23,0.9); }
+        .bg-slate-950 { background-color: #020617; }
+        .bg-slate-950\/95 { background-color: rgba(2,6,23,0.95); }
+        .bg-slate-950\/90 { background-color: rgba(2,6,23,0.9); }
+        .bg-slate-950\/80 { background-color: rgba(2,6,23,0.8); }
+        .bg-slate-950\/60 { background-color: rgba(2,6,23,0.6); }
+        .bg-slate-900 { background-color: #0f172a; }
+        .bg-slate-900\/60 { background-color: rgba(15,23,42,0.6); }
+        .bg-slate-800 { background-color: #1e293b; }
+        .bg-slate-800\/90 { background-color: rgba(30,41,59,0.9); }
+        .bg-slate-800\/80 { background-color: rgba(30,41,59,0.8); }
+        .bg-emerald-950\/90 { background-color: rgba(2,44,34,0.9); }
+        .bg-emerald-950\/80 { background-color: rgba(2,44,34,0.8); }
+        .bg-emerald-950\/70 { background-color: rgba(2,44,34,0.7); }
+        .bg-emerald-700 { background-color: #047857; }
+        .bg-emerald-700\/40 { background-color: rgba(4,120,87,0.4); }
+        .bg-emerald-600 { background-color: #059669; }
+        .bg-emerald-600\/20 { background-color: rgba(5,150,105,0.2); }
+        .bg-emerald-500\/10 { background-color: rgba(16,185,129,0.1); }
+        .bg-blue-700 { background-color: #1d4ed8; }
+        .bg-blue-600 { background-color: #2563eb; }
+        .bg-blue-600\/20 { background-color: rgba(37,99,235,0.2); }
+        .bg-blue-500\/10 { background-color: rgba(59,130,246,0.1); }
+        .bg-cyan-950 { background-color: #083344; }
+        .bg-cyan-600\/20 { background-color: rgba(8,145,178,0.2); }
+        .bg-red-950\/70 { background-color: rgba(69,10,10,0.7); }
+        .bg-red-950\/50 { background-color: rgba(69,10,10,0.5); }
+        .bg-red-600 { background-color: #dc2626; }
+        .bg-red-600\/20 { background-color: rgba(220,38,38,0.2); }
+        .bg-red-500\/20 { background-color: rgba(239,68,68,0.2); }
+        .bg-red-500\/10 { background-color: rgba(239,68,68,0.1); }
+        .bg-amber-950\/70 { background-color: rgba(69,26,3,0.7); }
+        .bg-amber-600 { background-color: #d97706; }
+        .bg-amber-500 { background-color: #f59e0b; }
+        .bg-amber-500\/20 { background-color: rgba(245,158,11,0.2); }
+        .bg-white { background-color: #ffffff; }
+
+        .text-white { color: #ffffff; }
+        .text-black { color: #000000; }
+        .text-slate-100 { color: #f1f5f9; }
+        .text-slate-200 { color: #e2e8f0; }
+        .text-slate-300 { color: #cbd5e1; }
+        .text-slate-400 { color: #94a3b8; }
+        .text-slate-500 { color: #64748b; }
+        .text-emerald-200 { color: #a7f3d0; }
+        .text-emerald-300 { color: #6ee7b7; }
+        .text-emerald-400 { color: #34d399; }
+        .text-blue-300 { color: #93c5fd; }
+        .text-blue-400 { color: #60a5fa; }
+        .text-cyan-300 { color: #67e8f9; }
+        .text-cyan-400 { color: #22d3ee; }
+        .text-red-200 { color: #fecaca; }
+        .text-red-300 { color: #fca5a5; }
+        .text-red-400 { color: #f87171; }
+        .text-amber-300 { color: #fcd34d; }
+        .text-amber-400 { color: #fbbf24; }
+        .text-purple-300 { color: #d8b4fe; }
+
+        .border { border: 1px solid var(--border-800); }
+        .border-2 { border: 2px solid var(--border-800); }
+        .border-b { border-bottom: 1px solid var(--border-800); }
+        .border-t { border-top: 1px solid var(--border-800); }
+        .border-b-2 { border-bottom: 2px solid var(--emerald-500); }
+        .border-slate-800 { border-color: #1e293b; }
+        .border-slate-700 { border-color: #334155; }
+        .border-slate-600 { border-color: #475569; }
+        .border-emerald-500 { border-color: #10b981; }
+        .border-emerald-500\/70 { border-color: rgba(16,185,129,0.7); }
+        .border-emerald-500\/50 { border-color: rgba(16,185,129,0.5); }
+        .border-emerald-500\/40 { border-color: rgba(16,185,129,0.4); }
+        .border-emerald-500\/30 { border-color: rgba(16,185,129,0.3); }
+        .border-emerald-400 { border-color: #34d399; }
+        .border-blue-500\/40 { border-color: rgba(59,130,246,0.4); }
+        .border-cyan-500\/50 { border-color: rgba(6,182,212,0.5); }
+        .border-cyan-500\/40 { border-color: rgba(6,182,212,0.4); }
+        .border-cyan-500\/30 { border-color: rgba(6,182,212,0.3); }
+        .border-red-500 { border-color: #ef4444; }
+        .border-red-500\/40 { border-color: rgba(239,68,68,0.4); }
+        .border-red-500\/30 { border-color: rgba(239,68,68,0.3); }
+        .border-amber-500\/40 { border-color: rgba(245,158,11,0.4); }
+        .border-amber-500\/30 { border-color: rgba(245,158,11,0.3); }
+        .border-purple-500\/30 { border-color: rgba(168,85,247,0.3); }
+        .border-white\/10 { border-color: rgba(255,255,255,0.1); }
+
+        .dot-sm { width: 6px; height: 6px; border-radius: 9999px; display: inline-block; }
+        .dot-md { width: 8px; height: 8px; border-radius: 9999px; display: inline-block; }
+        .dot-lg { width: 10px; height: 10px; border-radius: 9999px; display: inline-block; }
+        .bg-emerald-400 { background-color: #34d399; }
+        .bg-red-500 { background-color: #ef4444; }
+        .bg-amber-400 { background-color: #fbbf24; }
+        .bg-amber-500 { background-color: #f59e0b; }
+        .bg-blue-400 { background-color: #60a5fa; }
+        .bg-slate-400 { background-color: #94a3b8; }
+
+        .aspect-video { aspect-ratio: 16 / 9; width: 100%; }
+        .object-contain { object-fit: contain; }
+        .outline-none { outline: none; }
+
+        .card-hover:hover { background-color: var(--bg-800); border-color: rgba(16,185,129,0.7); }
+        .card-hover-blue:hover { background-color: var(--bg-800); border-color: #3b82f6; }
+
+        .tally-pgm {
+            box-shadow: inset 0 0 0 4px #ef4444, 0 0 20px rgba(239, 68, 68, 0.35);
+        }
+        .tally-screen-pgm {
+            box-shadow: inset 0 0 0 8px #ef4444, inset 0 0 32px rgba(239, 68, 68, 0.5);
+        }
+        .checkerboard {
+            background-color: #090d16;
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+            background-size: 16px 16px;
+        }
+        @keyframes pulseAnim { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+        .animate-pulse { animation: pulseAnim 1.8s cubic-bezier(0.4,0,0.6,1) infinite; }
+
+        .launcher-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        .director-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
+        @media (min-width: 768px) {
+            .launcher-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (min-width: 1024px) {
+            .director-grid { grid-template-columns: 5fr 7fr; }
+        }
+        ::-webkit-scrollbar { width: 4px; height: 4px; }
+        ::-webkit-scrollbar-track { background: #0a0e17; }
+        ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+    </style>
+</head>
+<body>
+
+    <!-- ================= TOP HEADER BAR ================= -->
+    <header style="height:44px;backdrop-filter:blur(8px);" class="shrink-0 bg-studio-900/95 border-b border-slate-800 px-2-5 flex items-center justify-between gap-1-5 z-50">
+        <div class="flex items-center gap-1-5">
+            <div class="flex items-center gap-1-5 bg-red-500/10 border border-red-500/30 px-2 py-0-5 rounded-md">
+                <span id="header-pulse" class="dot-md bg-red-500 animate-pulse"></span>
+                <span class="font-mono font-bold text-[11px] tracking-wider text-red-400">PRISM<span class="text-slate-100">DECK</span></span>
+                <span class="text-[9px] bg-emerald-600 text-white px-1-5 rounded font-mono font-bold">v7.1 APK</span>
+            </div>
+            <button onclick="switchRole('launcher')" id="btn-back-home" class="hidden text-[11px] bg-slate-800 text-slate-300 px-2 py-0-5 rounded border border-slate-700 transition">
+                ⇄ تغییر نقش
+            </button>
+            <button onclick="downloadStandaloneHtml()" class="text-[11px] bg-blue-600/20 text-blue-300 border border-blue-500/40 px-2 py-0-5 rounded transition" title="دانلود فایل HTML کاملاً آفلاین">
+                ⬇️ دانلود HTML
+            </button>
+        </div>
+
+        <div class="flex items-center gap-1-5 text-xs">
+            <button onclick="forceEnableWakeLock()" id="wakelock-badge" class="flex items-center gap-1 bg-emerald-950/80 border border-emerald-500/40 px-2 py-0-5 rounded text-[10px] text-emerald-300 transition">
+                <span id="wakelock-dot" class="dot-sm bg-emerald-400"></span>
+                <span id="wakelock-label">☀️ بیداری فعال</span>
+            </button>
+
+            <div id="fps-badge" class="flex items-center gap-1 bg-slate-900 border border-slate-800 px-2 py-0-5 rounded font-mono text-[10px] text-cyan-400">
+                <span id="fps-counter">30 FPS</span>
+            </div>
+
+            <div class="flex items-center gap-1 bg-emerald-950/70 border border-emerald-500/30 px-2 py-0-5 rounded font-mono text-[10px]">
+                <span class="dot-sm bg-emerald-400"></span>
+                <span class="text-emerald-300">OFFLINE LAN</span>
+            </div>
+
+            <div id="connection-badge" class="flex items-center gap-1 bg-slate-800/90 border border-slate-700 px-2 py-0-5 rounded-full">
+                <span id="conn-dot" class="dot-sm bg-amber-400"></span>
+                <span id="conn-text" class="text-[10px] font-medium text-slate-300">آماده</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 1. ROLE LAUNCHER VIEW ================= -->
+    <main id="view-launcher" class="flex-1 flex flex-col items-center justify-center p-4 relative overflow-y-auto">
+        <div class="max-w-3xl w-full space-y-5 z-10 my-auto">
+            <div class="text-center space-y-2">
+                <div class="inline-flex flex-wrap items-center justify-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-medium">
+                    <span>📡 نسخه ۷.۰ صددرصد آفلاین (بدون نیاز به اینترنت و بدون کد ۴ رقمی) • همگام‌سازی خودکار ۱ ثانیه‌ای صدا و تصویر</span>
+                </div>
+                <h1 class="text-2xl font-black text-white" style="margin:0.5rem 0;">
+                    استودیوی کارگردانی و سوییچر زنده (آفلاین هات‌اسپات)
+                </h1>
+                <p class="text-slate-400 text-xs max-w-xl mx-auto leading-relaxed">
+                    تمام ابزارها داخل همین یک فایل است. بدون هیچ سرور اینترنتی، دو گوشی را مستقیم روی وای‌فای هات‌اسپات به هم وصل کنید، با کنترل از راه دور (DataChannel) و ضد انباشت تاخیر صدا و تصویر.
+                </p>
+            </div>
+
+            <div class="launcher-grid">
+                <!-- Card 1: Wireless Camera Node -->
+                <div onclick="initCameraNodeRole()" class="cursor-pointer bg-studio-900/90 card-hover border-2 border-slate-800 rounded-2xl p-5 transition flex flex-col justify-between shadow-xl">
+                    <div class="space-y-3">
+                        <div class="text-[11px] font-mono text-emerald-400 font-semibold">گوشی اول • CAMERA 1 UNIT</div>
+                        <h2 class="text-lg font-bold text-white" style="margin:0;">۱. واحد دوربین فیلمبردار (720p HD)</h2>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            بدون اینترنت و بدون پین؛ یک کد اتصال مستقیم می‌سازد تا گوشی دوم از طریق هات‌اسپات به آن وصل شود.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-emerald-400">
+                        <span>راه‌اندازی دوربین فیلمبردار</span>
+                        <span>←</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Director Switcher Desk -->
+                <div onclick="initDirectorRole()" class="cursor-pointer bg-studio-900/90 card-hover-blue border-2 border-blue-500/40 rounded-2xl p-5 transition flex flex-col justify-between shadow-xl">
+                    <div class="space-y-3">
+                        <div class="text-[11px] font-mono text-blue-400 font-semibold">گوشی دوم • DIRECTOR DESK</div>
+                        <h2 class="text-lg font-bold text-white" style="margin:0;">۲. میز کارگردانی و ضبط مستر (720p MP4)</h2>
+                        <p class="text-xs text-slate-400 leading-relaxed">
+                            دریافت مستقیم LAN، چک همزمانی صدا و تصویر هر ۱ ثانیه، کنترل لنز/چرخش از طریق DataChannel آفلاین و ضبط MP4.
+                        </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-blue-400">
+                        <span>ورود به اتاق فرمان</span>
+                        <span>←</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ================= 2. WIRELESS CAMERA NODE VIEW ================= -->
+    <section id="view-camera-node" class="hidden flex-1 flex flex-col justify-between bg-black overflow-hidden relative p-2 gap-1-5">
+        <div id="cam-tally-border" class="absolute inset-0 pointer-events-none z-30 transition"></div>
+
+        <!-- OLED Power-Saver Dimmer Overlay -->
+        <div id="cam-oled-dimmer" onclick="toggleCameraOledDimmer(false)" class="hidden absolute inset-0 z-50 bg-black/95 flex flex-col items-center justify-center p-5 text-center cursor-pointer">
+            <div class="space-y-3 max-w-xs">
+                <div class="text-sm font-bold text-emerald-400">حالت کم‌نور (ضد خاموشی صفحه) فعال است</div>
+                <div class="text-xs text-slate-400">دوربین در حال ارسال تصویر و صدای زنده است. برای بازگشت نور صفحه، یک بار لمس کنید.</div>
+            </div>
+        </div>
+
+        <!-- Top Compact Bar + Offline Pairing Box -->
+        <div class="relative z-40 bg-studio-900/95 border border-slate-800 rounded-xl px-2-5 py-1-5 flex flex-col gap-1-5 shrink-0">
+            <div class="flex flex-wrap items-center justify-between gap-1-5">
+                <div class="flex items-center gap-1-5">
+                    <div id="cam-tally-pill" class="px-2 py-0-5 rounded-full bg-slate-800 border border-slate-600 text-slate-200 font-bold text-[10px] flex items-center gap-1">
+                        <span id="cam-tally-dot" class="dot-md bg-slate-400"></span>
+                        <span id="cam-tally-label">STANDBY</span>
+                    </div>
+                    <button onclick="toggleCameraOledDimmer(true)" class="text-[10px] bg-slate-800 text-amber-300 border border-amber-500/30 px-2 py-0-5 rounded-lg font-bold">
+                        🌙 کم‌نور
+                    </button>
+                    <button onclick="toggleCamPairingBox()" id="btn-cam-pair-toggle" class="text-[10px] bg-emerald-600 text-white px-2 py-0-5 rounded-lg font-bold">
+                        🔗 پنل اتصال آفلاین
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-1-5">
+                    <select id="cam-lens-select" onchange="changePhysicalLens(this.value)" class="bg-slate-950 border border-slate-700 text-white text-[10px] rounded-lg px-2 py-1 outline-none" style="max-width:150px;">
+                        <option value="">شناسایی لنزها...</option>
+                    </select>
+                    <span class="bg-emerald-950/90 border border-emerald-500/40 text-emerald-300 font-mono text-[10px] rounded-lg px-2 py-1 font-bold">720p HD</span>
+                </div>
+            </div>
+
+            <!-- Offline Pairing Panel (Camera Side) -->
+            <div id="cam-offline-pair-box" class="bg-slate-950 border border-emerald-500/40 rounded-lg p-2 space-y-1-5">
+                <div class="flex flex-wrap items-center justify-between gap-1-5">
+                    <span class="text-[10px] text-emerald-300 font-bold">۱) ساخت و ارسال کد اتصال دوربین به کارگردان:</span>
+                    <div class="flex items-center gap-1">
+                        <button type="button" onclick="createOfflineCameraOffer()" class="bg-emerald-600 text-white text-[10px] font-bold px-2-5 py-1 rounded">
+                            📡 ساخت کد دوربین
+                        </button>
+                        <button type="button" onclick="copyTextField('cam-offer-out', 'کد دوربین کپی شد! آن را به گوشی کارگردان بفرستید.')" class="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded">
+                            📋 کپی
+                        </button>
+                    </div>
+                </div>
+                <input id="cam-offer-out" type="text" readonly placeholder="روی «ساخت کد دوربین» بزنید..." class="w-full bg-slate-900 border border-slate-700 rounded px-2 py-1 text-[10px] font-mono text-emerald-300 outline-none">
+
+                <div class="flex flex-wrap items-center gap-1-5">
+                    <input id="cam-answer-in" type="text" placeholder="۲) کد پاسخ کارگردان را اینجا پیست کنید..." oninput="autoApplyAnswerIfValid()" class="flex-1 min-w-0 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-[10px] font-mono text-amber-300 outline-none">
+                    <button type="button" onclick="pasteToField('cam-answer-in', acceptOfflineDirectorAnswer)" class="bg-slate-800 text-slate-200 text-[10px] px-2 py-1 rounded border border-slate-700">📥 پیست</button>
+                    <button type="button" onclick="acceptOfflineDirectorAnswer()" class="bg-amber-500 text-black text-[10px] font-bold px-2-5 py-1 rounded">✅ اتصال</button>
+                </div>
+                <div id="cam-pair-status" class="text-[10px] text-slate-400">منتظر ساخت کد دوربین...</div>
+            </div>
+        </div>
+
+        <!-- Compact Viewfinder Container -->
+        <div class="relative flex-1 min-h-0 flex items-center justify-center overflow-hidden">
+            <div class="relative bg-studio-900/90 border-2 border-slate-800 rounded-2xl overflow-hidden flex items-center justify-center shadow-2xl" style="width:72%;max-width:440px;height:100%;max-height:36dvh;">
+                <video id="cam-local-video" autoplay playsinline muted class="w-full h-full object-contain"></video>
+
+                <div class="absolute top-1-5 left-1-5 z-30 bg-black/80 px-2 py-1 rounded-md border border-white/10 font-mono text-[9px] text-slate-300 space-y-0-5 pointer-events-none">
+                    <div id="cam-res-indicator">RES: 1280x720</div>
+                    <div id="cam-rot-indicator" class="text-amber-400">ROT: 270°</div>
+                    <div id="cam-zoom-indicator" class="text-emerald-400">ZOOM: 1.0x</div>
+                </div>
+
+                <div id="cam-intercom-toast" class="hidden absolute inset-x-2 top-2 z-50 bg-amber-500 text-black font-black px-3 py-1-5 rounded-xl shadow-2xl text-xs text-center">
+                    فرمان کارگردان: <span id="cam-intercom-text">آماده باشید!</span>
+                </div>
+
+                <div id="cam-permission-overlay" class="hidden absolute inset-0 z-40 bg-slate-950/95 flex flex-col items-center justify-center p-3 text-center">
+                    <p id="cam-error-reason" class="text-[11px] text-slate-300 mb-2">لطفاً مجوز دوربین و میکروفون را تایید کنید.</p>
+                    <button onclick="retryCameraPermission()" class="px-3 py-1-5 bg-emerald-600 text-white font-bold text-xs rounded-lg">
+                        📷 فعال‌سازی دوربین و میکروفون
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Hardware Controls -->
+        <div class="relative z-40 bg-studio-900/95 border border-slate-800 rounded-xl p-2-5 flex flex-col gap-2 shrink-0">
+            <div class="bg-slate-950/90 border border-slate-800 rounded-lg px-2-5 py-1-5 space-y-1">
+                <div class="flex items-center justify-between gap-1">
+                    <span class="text-[10px] font-bold text-emerald-400">🔭 لنزهای اپتیکال و زوم:</span>
+                    <div class="flex items-center gap-1">
+                        <button type="button" onclick="switchOpticalStep(0.6)" class="px-2 py-0-5 rounded bg-slate-800 text-[10px] font-mono text-cyan-300 border border-cyan-500/30">0.6x</button>
+                        <button type="button" onclick="switchOpticalStep(1.0)" class="px-2 py-0-5 rounded bg-emerald-700 text-[10px] font-mono text-white font-bold">1x اصلی</button>
+                        <button type="button" onclick="switchOpticalStep(2.0)" class="px-2 py-0-5 rounded bg-slate-800 text-[10px] font-mono text-amber-300 border border-amber-500/30">2x زوم</button>
+                        <button type="button" onclick="switchOpticalStep(3.0)" class="px-2 py-0-5 rounded bg-slate-800 text-[10px] font-mono text-purple-300 border border-purple-500/30">3x تله</button>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <input id="cam-zoom-slider" type="range" min="1" max="8" step="0.1" value="1" oninput="scheduleCameraZoom(this.value)" class="flex-1 cursor-pointer">
+                    <span id="cam-zoom-val" class="font-mono text-[10px] text-white text-left" style="width:2.5rem;">1.0x</span>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-1-5">
+                <div class="flex flex-wrap items-center gap-1">
+                    <button onclick="rotateCameraFeedFromNode()" class="px-2-5 py-1 rounded-lg bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px] font-bold">
+                        📐 چرخش (<span id="cam-btn-rot-val">270°</span>)
+                    </button>
+                    <button onclick="flipLocalCamera()" class="px-2-5 py-1 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 text-[10px] font-bold">
+                        🔄 عقب/سلفی
+                    </button>
+                    <button onclick="triggerRefocus()" class="px-2-5 py-1 rounded-lg bg-slate-800 text-emerald-300 border border-slate-700 text-[10px] font-bold">
+                        🎯 فوکوس
+                    </button>
+                    <button onclick="toggleTorch()" class="px-2-5 py-1 rounded-lg bg-slate-800 text-slate-200 border border-slate-700 text-[10px] font-bold">
+                        🔦 فلاش
+                    </button>
+                    <button type="button" onclick="cycleCameraColorBoost()" id="btn-cam-color-boost" class="px-2 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-[10px] font-bold">
+                        🎨 رنگ: عادی
+                    </button>
+                </div>
+
+                <div class="flex items-center gap-1 flex-1 max-w-xs">
+                    <span class="text-[10px] text-emerald-300 whitespace-nowrap">🎙️ میکروفون:</span>
+                    <select id="cam-audio-input-select" onchange="changeAudioInput(this.value)" class="flex-1 bg-slate-950 border border-slate-700 rounded-lg px-1-5 py-1 text-[10px] text-white outline-none truncate">
+                        <option value="">میکروفون پیش‌فرض گوشی</option>
+                    </select>
+                    <button type="button" onclick="refreshAudioInputs()" class="text-[10px] px-1-5 py-1 rounded bg-slate-800 text-slate-200">🔄</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 3. DIRECTOR SWITCHER STUDIO VIEW ================= -->
+    <section id="view-director" class="hidden flex-1 flex flex-col bg-studio-950 overflow-y-auto">
+
+        <!-- Top Connection & Recording Toolbar -->
+        <div class="bg-studio-900 border-b border-slate-800 px-3 py-2 flex flex-col gap-2">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex flex-wrap items-center gap-2">
+                    <button onclick="toggleDirPairingBox()" id="btn-dir-pair-toggle" class="text-xs bg-emerald-600 text-white px-2-5 py-1-5 rounded-lg font-bold transition">
+                        🔗 اتصال آفلاین دوربین ۱
+                    </button>
+                    <button onclick="cycleCam1Rotation()" class="text-xs bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2-5 py-1-5 rounded-lg font-bold flex items-center gap-1 transition">
+                        <span>📐 چرخش دوربین ۱:</span>
+                        <span id="dir-rot-badge" class="font-mono">270°</span>
+                    </button>
+                    <button onclick="cycleDirectorColorBoost()" id="btn-dir-color-boost" class="text-xs bg-slate-800 text-slate-200 border border-slate-700 px-2-5 py-1-5 rounded-lg font-bold transition">
+                        🎨 رنگ دوربین: عادی (شیائومی)
+                    </button>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-1-5">
+                    <span class="bg-slate-950 border border-cyan-500/30 text-cyan-300 font-mono text-xs px-2-5 py-1-5 rounded-lg font-bold">
+                        ⚡ 720p HD (آفلاین)
+                    </span>
+                    <button onclick="toggleRecording()" id="btn-record-pgm" class="bg-red-600 text-white font-bold text-xs px-3 py-1-5 rounded-lg shadow-lg flex items-center gap-1-5 transition">
+                        <span class="dot-lg bg-white"></span>
+                        <span id="btn-record-label">ضبط مستر خروجی (MP4)</span>
+                    </button>
+                    <button onclick="takeProgramSnapshot()" class="bg-slate-800 text-slate-200 border border-slate-700 text-xs px-2-5 py-1-5 rounded-lg" title="ثبت عکس">
+                        📸
+                    </button>
+                </div>
+            </div>
+
+            <!-- Offline Pairing Panel (Director Side) -->
+            <div id="dir-offline-pair-box" class="bg-slate-950 border border-emerald-500/40 rounded-lg p-2-5 space-y-2">
+                <div class="flex flex-wrap items-center gap-1-5">
+                    <span class="text-[11px] text-emerald-300 font-bold">۱) کد دوربین ۱ را اینجا پیست کنید:</span>
+                    <input id="dir-offer-in" type="text" placeholder="کد کپی‌شده از گوشی دوربین را پیست کنید..." oninput="autoCreateAnswerIfValid()" class="flex-1 min-w-0 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-[10px] font-mono text-emerald-300 outline-none">
+                    <button type="button" onclick="pasteToField('dir-offer-in', createOfflineDirectorAnswer)" class="bg-slate-800 text-slate-200 text-[10px] px-2 py-1 rounded border border-slate-700">📥 پیست</button>
+                    <button type="button" onclick="createOfflineDirectorAnswer()" class="bg-emerald-600 text-white text-[10px] font-bold px-2-5 py-1 rounded">🔗 ساخت کد پاسخ</button>
+                </div>
+                <div class="flex flex-wrap items-center gap-1-5">
+                    <span class="text-[11px] text-amber-300 font-bold">۲) کد پاسخ را کپی و در گوشی دوربین پیست کنید:</span>
+                    <input id="dir-answer-out" type="text" readonly placeholder="پس از پیست کد دوربین، کد پاسخ اینجا ساخته می‌شود..." class="flex-1 min-w-0 bg-slate-900 border border-slate-700 rounded px-2 py-1 text-[10px] font-mono text-amber-300 outline-none">
+                    <button type="button" onclick="copyTextField('dir-answer-out', 'کد پاسخ کپی شد! آن را در گوشی دوربین پیست کنید.')" class="bg-blue-600 text-white text-[10px] font-bold px-2-5 py-1 rounded">📋 کپی پاسخ</button>
+                </div>
+                <div id="dir-pair-status" class="text-[10px] text-slate-400">منتظر دریافت کد اتصال از گوشی دوربین ۱...</div>
+            </div>
+
+            <!-- Status & Download Bar -->
+            <div class="w-full flex flex-wrap items-center justify-between gap-2 rounded-lg border border-slate-800 bg-slate-950/80 px-3 py-1-5">
+                <div id="recording-status-visible" role="status" aria-live="polite" class="text-[11px] leading-5 text-slate-200">
+                    آماده ضبط مستر MP4 (720p) • همگام‌سازی خودکار ۱ ثانیه‌ای صدا و تصویر فعال است.
+                </div>
+                <div id="recorded-download-slot" class="hidden shrink-0"></div>
+            </div>
+
+            <!-- Live A/V Sync & Network Diagnostic Bar -->
+            <div class="w-full flex flex-wrap items-center justify-between gap-2 rounded-lg border border-slate-800 bg-slate-950/60 px-3 py-1-5">
+                <div class="flex flex-wrap items-center gap-2">
+                    <div id="video-diagnostic-visible" role="status" aria-live="polite" class="text-[10px] leading-5 text-slate-400">
+                        وضعیت تصویر: منتظر اتصال آفلاین دوربین ۱ روی هات‌اسپات (چرخش: 270°)
+                    </div>
+                    <div id="av-sync-badge" class="text-[10px] font-mono px-2 py-0-5 rounded bg-slate-900 border border-slate-700 text-slate-300">
+                        ⏱️ چک ۱ث صدا/تصویر: در انتظار اتصال
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center gap-1-5">
+                    <span id="p2p-route-badge" class="text-[10px] font-mono text-emerald-400">⚡ مسیر مستقیم هات‌اسپات (بدون اینترنت)</span>
+                    <button type="button" onclick="toggleAutoAvSync()" id="btn-auto-sync-toggle" class="text-[10px] bg-emerald-700/40 text-emerald-200 border border-emerald-500/50 px-2 py-0-5 rounded font-bold transition">
+                        🛡️ چک ۱ ثانیه‌ای: روشن
+                    </button>
+                    <button type="button" onclick="manualResyncNow()" class="text-[10px] bg-cyan-600/20 text-cyan-300 border border-cyan-500/40 px-2 py-0-5 rounded font-bold transition">
+                        ⚡ همگام‌سازی فوری
+                    </button>
+                    <button type="button" onclick="forceRefreshVideoStreams()" class="text-[10px] bg-emerald-600/20 text-emerald-300 border border-emerald-500/40 px-2 py-0-5 rounded font-bold transition">
+                        🔄 بازخوانی تصویر
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Master Broadcast Monitor: PROGRAM -->
+        <div class="p-3 max-w-4xl mx-auto w-full">
+            <div class="bg-studio-900 rounded-xl border border-slate-800 overflow-hidden flex flex-col shadow-2xl">
+                <div class="bg-red-950/50 border-b border-red-500/30 px-3 py-1-5 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="dot-lg bg-red-500 animate-pulse"></span>
+                        <span class="font-mono font-bold text-xs text-red-400 tracking-wider">PROGRAM (PGM) • تصویر نهایی روی آنتن</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span id="pgm-source-label" class="font-mono text-xs bg-red-500/20 text-red-300 px-2 py-0-5 rounded">CAM 1</span>
+                        <span id="pgm-res-badge" class="font-mono text-[10px] text-emerald-400">720p HD OFFLINE</span>
+                    </div>
+                </div>
+                <div class="relative aspect-video checkerboard flex items-center justify-center overflow-hidden tally-pgm">
+                    <canvas id="canvas-pgm" width="1280" height="720" class="w-full h-full object-contain"></canvas>
+                </div>
+                <div class="bg-slate-950/95 border-t border-slate-800 px-3 py-2 flex flex-wrap items-center justify-between gap-2">
+                    <div class="flex items-center gap-1-5">
+                        <button type="button" id="btn-pgm-play-pause" onclick="togglePgmPlayPause()" class="bg-emerald-600 text-white font-bold text-xs px-3-5 py-1-5 rounded-lg flex items-center gap-1-5 shadow transition">
+                            <span id="pgm-play-pause-icon">⏯</span>
+                            <span id="pgm-play-pause-label">پخش / مکث ویدیو (Play/Pause)</span>
+                        </button>
+                        <button type="button" id="btn-rec-pause-resume" onclick="togglePauseResumeRecording()" class="hidden bg-amber-600 text-white font-bold text-xs px-3 py-1-5 rounded-lg items-center gap-1 transition">
+                            <span>⏯ مکث/ادامه ضبط</span>
+                        </button>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-3 text-[10px]">
+                        <div class="flex items-center gap-1-5">
+                            <span class="text-blue-300 font-bold">🎬 صدای ویدیو:</span>
+                            <input type="range" min="0" max="200" value="135" oninput="setVolumeBalance('media', this.value)" style="width:5rem;" class="cursor-pointer">
+                            <span id="vol-media-lbl" class="font-mono text-blue-300" style="width:2.2rem;">135%</span>
+                        </div>
+                        <div class="flex items-center gap-1-5">
+                            <span class="text-emerald-300 font-bold">🎙️ صدای مجری:</span>
+                            <input type="range" min="0" max="150" value="45" oninput="setVolumeBalance('cam1', this.value)" style="width:5rem;" class="cursor-pointer">
+                            <span id="vol-cam1-lbl" class="font-mono text-emerald-300" style="width:2.2rem;">45%</span>
+                        </div>
+                    </div>
+
+                    <span id="pgm-playback-status" class="text-[11px] font-mono text-emerald-400">▶ LIVE • دوربین زنده فعال است</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Switcher Deck & Control Tabs -->
+        <div class="px-3 pb-6 max-w-6xl mx-auto w-full director-grid flex-1">
+
+            <!-- Left Column: Direct Program Switcher -->
+            <div class="bg-studio-900 border border-slate-800 rounded-xl p-3 flex flex-col justify-between space-y-3">
+                <div class="space-y-2-5">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xs font-bold text-slate-200" style="margin:0;">🎛️ سوییچ مستقیم روی آنتن (DIRECT PGM)</h3>
+                        <span class="text-[10px] font-mono text-red-400">کات آنی</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2" id="pgm-buttons-grid">
+                        <button onclick="directCutToProgram('cam1')" data-pgm="cam1" class="pgm-btn py-2-5 px-2 rounded-xl font-bold text-xs border-2 border-red-500 bg-red-500/20 text-white transition flex flex-col items-center gap-1">
+                            <span>📹 CAM 1</span>
+                            <span class="text-[10px] text-red-200">دوربین تمام‌صفحه</span>
+                        </button>
+                        <button onclick="directCutToProgram('media')" data-pgm="media" class="pgm-btn py-2-5 px-2 rounded-xl font-bold text-xs border border-slate-700 bg-slate-800/80 text-slate-300 transition flex flex-col items-center gap-1">
+                            <span>🎬 MEDIA</span>
+                            <span class="text-[10px] text-slate-400">پخش فیلم/عکس</span>
+                        </button>
+                        <button onclick="directCutToProgram('pip')" data-pgm="pip" class="pgm-btn py-2-5 px-2 rounded-xl font-bold text-xs border border-slate-700 bg-slate-800/80 text-slate-300 transition flex flex-col items-center gap-1">
+                            <span>🖼️ PiP</span>
+                            <span class="text-[10px] text-slate-400">مربع عادی (۱/۳ چپ)</span>
+                        </button>
+                        <button onclick="directCutToProgram('pip_lg')" data-pgm="pip_lg" class="pgm-btn py-2-5 px-2 rounded-xl font-bold text-xs border border-slate-700 bg-slate-800/80 text-slate-300 transition flex flex-col items-center gap-1">
+                            <span>🔲 PiP +25%</span>
+                            <span class="text-[10px] text-slate-400">مربع بزرگ (برش ۲/۱۲)</span>
+                        </button>
+                        <button onclick="directCutToProgram('split')" data-pgm="split" class="pgm-btn py-2-5 px-2 rounded-xl font-bold text-xs border border-slate-700 bg-slate-800/80 text-slate-300 transition flex flex-col items-center gap-1">
+                            <span>◫ SPLIT 50:50</span>
+                            <span class="text-[10px] text-slate-400">دو قاب ۵۰/۵۰</span>
+                        </button>
+                        <button onclick="directCutToProgram('split23')" data-pgm="split23" class="pgm-btn py-2-5 px-2 rounded-xl font-bold text-xs border border-slate-700 bg-slate-800/80 text-slate-300 transition flex flex-col items-center gap-1">
+                            <span>◧ SPLIT 2/3</span>
+                            <span class="text-[10px] text-slate-400">۲/۳ دوربین + ۱/۳ ویدیو</span>
+                        </button>
+                        <button onclick="directCutToProgram('slate')" data-pgm="slate" class="pgm-btn py-2-5 px-2 rounded-xl font-bold text-xs border border-slate-700 bg-slate-800/80 text-slate-300 transition flex flex-col items-center gap-1 col-span-2">
+                            <span>⏸️ SLATE • کارت انتظار</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-slate-950/80 border border-slate-800 rounded-xl px-3 py-2 text-[11px] text-slate-400 leading-relaxed">
+                    💡 در حالت‌های <strong class="text-white">MEDIA</strong>، <strong class="text-white">PiP</strong> و <strong class="text-white">PiP +25%</strong> می‌توانید کادر مربع دوربین را با لمس روی مانیتور جابه‌جا کنید.
+                </div>
+            </div>
+
+            <!-- Right Column: Remote PTZ + Rotation & Media Player -->
+            <div class="bg-studio-900 border border-slate-800 rounded-xl flex flex-col overflow-hidden">
+
+                <div class="grid grid-cols-2 bg-slate-950 border-b border-slate-800 text-xs font-bold">
+                    <button onclick="switchDirectorTab('ptz')" id="tab-btn-ptz" class="py-2-5 text-emerald-400 border-b-2 bg-slate-900/60">📡 کنترل لنز و چرخش دوربین ۱</button>
+                    <button onclick="switchDirectorTab('media')" id="tab-btn-media" class="py-2-5 text-slate-400" style="background:transparent;">🎬 پخش فیلم و عکس (Media)</button>
+                </div>
+
+                <!-- TAB 1: Remote Camera Lens, Orientation & Hardware Zoom -->
+                <div id="tab-content-ptz" class="p-3 space-y-2-5 flex-1 flex flex-col justify-between">
+                    <div class="space-y-2-5">
+                        <div class="bg-slate-950 p-2-5 rounded-lg border border-amber-500/40 space-y-1-5">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-amber-300 font-bold">📐 زاویه چرخش تصویر دوربین ۱ (پیش‌فرض ۲۷۰ درجه):</span>
+                                <button onclick="toggleCam1Mirror()" id="btn-cam1-mirror" class="text-[10px] bg-slate-800 px-2 py-0-5 rounded text-slate-300">↔️ قرینه: خاموش</button>
+                            </div>
+                            <div class="grid grid-cols-4 gap-1-5">
+                                <button onclick="setCam1Rotation(0)" id="rot-btn-0" class="py-1-5 rounded bg-slate-800 text-slate-300 font-mono font-bold text-xs">0° عادی</button>
+                                <button onclick="setCam1Rotation(90)" id="rot-btn-90" class="py-1-5 rounded bg-slate-800 text-slate-300 font-mono font-bold text-xs">90° راست</button>
+                                <button onclick="setCam1Rotation(180)" id="rot-btn-180" class="py-1-5 rounded bg-slate-800 text-slate-300 font-mono font-bold text-xs">180° وارونه</button>
+                                <button onclick="setCam1Rotation(270)" id="rot-btn-270" class="py-1-5 rounded bg-amber-500 text-black font-mono font-bold text-xs">270° چپ</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="text-[10px] text-slate-400 block mb-1">لنز فیزیکی گوشی دوربین ۱ (کیفیت ثابت 720p HD):</label>
+                            <select id="remote-lens-select" onchange="sendRemoteCommand({type:'setLens', deviceId: this.value})" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-2 py-1-5 text-xs text-white outline-none">
+                                <option value="">پس از اتصال لیست می‌شود</option>
+                            </select>
+                        </div>
+
+                        <div class="bg-slate-950 p-2-5 rounded-lg border border-slate-800 space-y-1-5">
+                            <div class="flex items-center justify-between text-xs">
+                                <span class="text-slate-200 font-bold">🔭 سوییچ لنز اپتیکال و زوم سخت‌افزاری:</span>
+                                <span id="remote-zoom-label" class="font-mono text-emerald-400">1.0x</span>
+                            </div>
+                            <div class="grid grid-cols-4 gap-1">
+                                <button type="button" onclick="sendRemoteOpticalStep(0.6)" class="py-1 rounded bg-slate-800 text-[10px] font-mono text-cyan-300 border border-cyan-500/30">0.6x اولترا</button>
+                                <button type="button" onclick="sendRemoteOpticalStep(1.0)" class="py-1 rounded bg-emerald-700 text-[10px] font-mono text-white font-bold">1.0x اصلی</button>
+                                <button type="button" onclick="sendRemoteOpticalStep(2.0)" class="py-1 rounded bg-slate-800 text-[10px] font-mono text-amber-300 border border-amber-500/30">2.0x زوم</button>
+                                <button type="button" onclick="sendRemoteOpticalStep(3.0)" class="py-1 rounded bg-slate-800 text-[10px] font-mono text-purple-300 border border-purple-500/30">3.0x تله</button>
+                            </div>
+                            <input id="remote-zoom-slider" type="range" min="1" max="8" step="0.1" value="1" oninput="sendRemoteZoom(this.value)" class="w-full cursor-pointer">
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-1-5">
+                            <button onclick="sendRemoteCommand({type:'flip'})" class="bg-slate-800 text-slate-200 text-[11px] font-bold py-1-5 rounded-lg border border-slate-700">
+                                🔄 سلفی/عقب
+                            </button>
+                            <button onclick="sendRemoteCommand({type:'refocus'})" class="bg-slate-800 text-emerald-300 text-[11px] font-bold py-1-5 rounded-lg border border-slate-700">
+                                🎯 فوکوس مجدد
+                            </button>
+                            <button onclick="sendRemoteCommand({type:'torch'})" class="bg-slate-800 text-amber-300 text-[11px] font-bold py-1-5 rounded-lg border border-slate-700">
+                                🔦 فلاش
+                            </button>
+                        </div>
+
+                        <div class="flex gap-1-5">
+                            <input id="intercom-input" type="text" placeholder="ارسال پیام فوری به صفحه دوربین ۱..." class="flex-1 bg-slate-950 border border-slate-700 rounded-lg px-2-5 py-1-5 text-xs text-white outline-none">
+                            <button onclick="sendIntercomMessage()" class="bg-amber-500 text-black font-bold text-xs px-3 py-1-5 rounded-lg">
+                                ارسال
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: Media Player -->
+                <div id="tab-content-media" class="hidden p-3 space-y-3 flex-1 flex flex-col justify-between">
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between">
+                            <label class="text-xs font-semibold text-slate-300">بارگذاری ویدیو یا عکس از گالری:</label>
+                            <label class="cursor-pointer bg-blue-600 text-white text-xs px-3 py-1-5 rounded-lg font-bold transition">
+                                <span>+ انتخاب فایل مدیا</span>
+                                <input type="file" id="media-file-input" accept="video/*,image/*" multiple class="hidden" onchange="handleMediaUpload(event)">
+                            </label>
+                        </div>
+                        <div class="bg-slate-950 border border-slate-800 rounded-lg p-2-5 space-y-2">
+                            <div class="flex items-center justify-between gap-2">
+                                <div class="truncate min-w-0">
+                                    <div id="media-filename" class="text-xs font-bold text-slate-200 truncate">فهرست پخش خالی است</div>
+                                    <div id="media-status" class="text-[10px] text-slate-400">چند ویدیو یا عکس انتخاب کنید</div>
+                                </div>
+                                <div class="flex items-center gap-1 shrink-0">
+                                    <button onclick="toggleMediaPlayback()" id="btn-media-play" class="bg-emerald-600 text-white text-xs px-2-5 py-1-5 rounded font-bold">▶ پخش</button>
+                                    <button onclick="restartMedia()" class="bg-slate-800 text-slate-300 text-xs px-2 py-1-5 rounded">⏮</button>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-1-5 items-center">
+                                <label class="text-[10px] text-slate-400">حالت پخش:</label>
+                                <select id="playlist-mode" onchange="state.mediaPlaylistMode = this.value" class="bg-slate-900 border border-slate-700 rounded px-2 py-1 text-[11px] text-white">
+                                    <option value="sequence">پشت‌سرهم</option>
+                                    <option value="single">فقط مورد انتخابی (بازگشت خودکار به دوربین)</option>
+                                </select>
+                                <button onclick="playPlaylist()" class="bg-blue-700 text-white text-[11px] px-2 py-1 rounded font-bold">▶ پخش فهرست</button>
+                                <button onclick="stopPlaylist()" class="bg-slate-800 text-slate-200 text-[11px] px-2 py-1 rounded">■ توقف</button>
+                                <button onclick="playPlaylistStep(-1)" class="bg-slate-800 text-slate-200 text-[11px] px-2 py-1 rounded">قبلی</button>
+                                <button onclick="playPlaylistStep(1)" class="bg-slate-800 text-slate-200 text-[11px] px-2 py-1 rounded">بعدی</button>
+                            </div>
+                            <ol id="media-playlist" class="space-y-1 overflow-y-auto text-[11px]" style="max-height:10rem;padding:0;margin:0;list-style:none;">
+                                <li class="text-slate-500">هنوز فایلی اضافه نشده است.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <button onclick="directCutToProgram('media')" class="w-full py-2 bg-red-600/20 text-red-300 border border-red-500/40 rounded-lg text-xs font-bold transition">
+                        ⚡ نمایش فوری مدیا روی آنتن (PGM)
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Hidden Media Elements (Inside viewport at 2x2px so Chrome Android NEVER throttles decoding) -->
+    <div aria-hidden="true" style="position:fixed;left:0;top:0;width:2px;height:2px;opacity:0.001;overflow:hidden;pointer-events:none;z-index:-1">
+        <video id="hidden-cam1-video" width="1280" height="720" autoplay playsinline muted style="width:1280px;height:720px;object-fit:contain;pointer-events:none"></video>
+        <video id="hidden-media-video" width="1280" height="720" playsinline preload="metadata" style="width:1280px;height:720px"></video>
+        <img id="hidden-media-img" alt="" style="width:auto;height:auto">
+    </div>
+
+    <!-- ================= APPLICATION LOGIC (v7.0 100% OFFLINE + ZERO-DRIFT A/V SYNC) ================= -->
+    <script>
+        // 100% Offline LAN/Hotspot P2P: empty iceServers gathers local 192.168.x.x candidates in <50ms with zero internet!
+        const RTC_CONFIG = {
+            iceServers: [],
+            bundlePolicy: 'max-bundle',
+            rtcpMuxPolicy: 'require'
+        };
+
+        const state = {
+            appVersion: 7.0,
+            role: 'launcher',
+            rtcPeerConn: null,
+            ctrlChannel: null,
+            activeVideoSender: null,
+            activeAudioSender: null,
+
+            // 1-Second A/V Sync Watchdog State
+            autoAvSyncEnabled: true,
+            avSyncTimer: null,
+            prevRtpStats: {
+                videoJbDelay: 0, videoJbEmitted: 0,
+                audioJbDelay: 0, audioJbEmitted: 0,
+                framesDecoded: 0, framesReceived: 0, framesDropped: 0
+            },
+            lastVideoFrameTs: 0,
+            highDelayStreak: 0,
+            lastHardFlushAt: 0,
+            cam1DelayNode: null,
+            currentAudioDelaySec: 0,
+            mediaAudioDelayNode: null,
+            mediaSyncDelayMs: 80,
+            mediaFrameBuffer: [],
+            lastRttMs: 10,
+            androidPeerConnected: false,
+
+            // WakeLock & Keep-Awake
+            wakeLockSentinel: null,
+            keepAwakeAudioCtx: null,
+            keepAwakeTimer: null,
+
+            // Camera 1 Hardware & Audio (Locked to 720p HD)
+            localCamStream: null,
+            rawVideoTrack: null,
+            rawAudioTrack: null,
+            currentAudioDeviceId: '',
+            availableAudioInputs: [],
+            availableLenses: [],
+            currentDeviceId: '',
+            currentFacingMode: 'environment',
+            currentZoom: 1.0,
+            zoomPending: false,
+            torchOn: false,
+            colorBoostLevel: 0,
+
+            // Orientation & Framing (Default 270 degrees)
+            cam1Rotation: 270,
+            cam1Mirror: false,
+            splitCropStartRatio: 0,
+
+            // Director Mixer State
+            remoteCam1Stream: null,
+            pgmSource: 'cam1',
+
+            // Media Player & Playlist
+            mediaType: 'demo',
+            mediaPlaylist: [],
+            mediaPlaylistIndex: -1,
+            mediaPlaylistMode: 'sequence',
+            mediaPlaylistRunning: false,
+            mediaObjectUrls: [],
+            imageAdvanceTimer: null,
+            reactionOverlay: { x: 0.025, y: 0.66, size: 0.20 },
+
+            // WebAudio Mixer & MP4 Recording
+            audioCtx: null,
+            destNode: null,
+            gains: { cam1: 0.45, media: 1.35 },
+            sourceNodes: {},
+            gainNodes: {},
+            mediaRecorder: null,
+            recordedChunks: [],
+            isRecording: false,
+            activeRecMime: '',
+            persistentCanvasStream: null,
+            recordingTimer: null,
+            recordingStartAt: 0,
+            lastRecordedBlobUrl: null,
+            lastCtrlCmdTs: 0
+        };
+
+        // ============================================================================
+        // 1. KEEP-AWAKE ENGINE
+        // ============================================================================
+        async function requestScreenWakeLock() {
+            const dot = document.getElementById('wakelock-dot');
+            const label = document.getElementById('wakelock-label');
+            if ('wakeLock' in navigator) {
+                try {
+                    if (state.wakeLockSentinel) {
+                        try { await state.wakeLockSentinel.release(); } catch (e) {}
+                    }
+                    state.wakeLockSentinel = await navigator.wakeLock.request('screen');
+                    if (dot) dot.className = 'dot-sm bg-emerald-400 animate-pulse';
+                    if (label) label.innerText = '☀️ قفل روشن';
+                    state.wakeLockSentinel.addEventListener('release', () => {
+                        if (document.visibilityState === 'visible' && state.role !== 'launcher') {
+                            requestScreenWakeLock();
+                        }
+                    });
+                } catch (err) {
+                    if (label) label.innerText = '☀️ بیداری صوتی';
+                }
+            }
+            startSilentAudioKeepAwake();
+        }
+
+        function startSilentAudioKeepAwake() {
+            try {
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                if (!AudioCtx) return;
+                if (!state.keepAwakeAudioCtx) state.keepAwakeAudioCtx = new AudioCtx();
+                if (state.keepAwakeAudioCtx.state === 'suspended') {
+                    state.keepAwakeAudioCtx.resume().catch(() => {});
+                }
+                if (!state.keepAwakeTimer) {
+                    state.keepAwakeTimer = setInterval(() => {
+                        try {
+                            if (!state.keepAwakeAudioCtx) return;
+                            if (state.keepAwakeAudioCtx.state === 'suspended') {
+                                state.keepAwakeAudioCtx.resume().catch(() => {});
+                            }
+                            const osc = state.keepAwakeAudioCtx.createOscillator();
+                            const gain = state.keepAwakeAudioCtx.createGain();
+                            gain.gain.value = 0.0001;
+                            osc.frequency.value = 1;
+                            osc.connect(gain);
+                            gain.connect(state.keepAwakeAudioCtx.destination);
+                            osc.start();
+                            osc.stop(state.keepAwakeAudioCtx.currentTime + 0.05);
+                        } catch (e) {}
+                    }, 15000);
+                }
+            } catch (e) {}
+        }
+
+        function forceEnableWakeLock() { requestScreenWakeLock(); }
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') requestScreenWakeLock();
+        });
+        document.addEventListener('click', () => {
+            if (!state.wakeLockSentinel) requestScreenWakeLock();
+        }, { passive: true });
+
+        function toggleCameraOledDimmer(show) {
+            const dimmer = document.getElementById('cam-oled-dimmer');
+            if (dimmer) dimmer.classList.toggle('hidden', !show);
+            requestScreenWakeLock();
+        }
+
+        function toggleCamPairingBox() {
+            const box = document.getElementById('cam-offline-pair-box');
+            if (box) box.classList.toggle('hidden');
+        }
+
+        function toggleDirPairingBox() {
+            const box = document.getElementById('dir-offline-pair-box');
+            if (box) box.classList.toggle('hidden');
+        }
+
+        // ============================================================================
+        // 2. DOWNLOAD STANDALONE HTML FILE
+        // ============================================================================
+        function downloadStandaloneHtml() {
+            const htmlContent = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'PRISM_Offline_v7.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            setTimeout(() => URL.revokeObjectURL(url), 2000);
+        }
+
+        // ============================================================================
+        // 3. OFFLINE TOKEN ENCODE/DECODE & CLIPBOARD HELPERS
+        // ============================================================================
+        function encodeOfflineSignal(obj) {
+            const json = JSON.stringify(obj);
+            const bytes = new TextEncoder().encode(json);
+            let bin = '';
+            for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+            return 'PRISM1:' + btoa(bin);
+        }
+
+        function decodeOfflineSignal(str) {
+            const clean = (str || '').trim();
+            if (!clean.startsWith('PRISM1:')) return null;
+            const b64 = clean.slice(7).trim();
+            const bin = atob(b64);
+            const bytes = new Uint8Array(bin.length);
+            for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+            const json = new TextDecoder().decode(bytes);
+            return JSON.parse(json);
+        }
+
+        async function copyTextField(inputId, msg) {
+            const el = document.getElementById(inputId);
+            if (!el || !el.value) return;
+            try {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    await navigator.clipboard.writeText(el.value);
+                } else {
+                    el.select();
+                    document.execCommand('copy');
+                }
+            } catch (e) {
+                try { el.select(); document.execCommand('copy'); } catch (e2) {}
+            }
+            const statusId = inputId.startsWith('cam') ? 'cam-pair-status' : 'dir-pair-status';
+            const st = document.getElementById(statusId);
+            if (st && msg) st.textContent = '✅ ' + msg;
+        }
+
+        async function pasteToField(inputId, callbackFn) {
+            const el = document.getElementById(inputId);
+            if (!el) return;
+            try {
+                if (navigator.clipboard && navigator.clipboard.readText) {
+                    const text = await navigator.clipboard.readText();
+                    if (text) {
+                        el.value = text.trim();
+                        if (typeof callbackFn === 'function') callbackFn();
+                    }
+                }
+            } catch (e) {}
+        }
+
+
+        // ============================================================================
+        // ANDROID APK NATIVE BRIDGE (AUTO-DISCOVERY WITHOUT CODES)
+        // ============================================================================
+        function hasAndroidBridge() {
+            return typeof window.AndroidBridge !== 'undefined';
+        }
+
+        function sendAutoSignal(obj) {
+            if (hasAndroidBridge()) {
+                try { window.AndroidBridge.sendSignal(JSON.stringify(obj)); } catch (e) {}
+            }
+        }
+
+        window.onAndroidLinkStatus = function(status) {
+            if (status === 'peer_connected') {
+                state.androidPeerConnected = true;
+                if (state.role === 'camera') {
+                    const st = document.getElementById('cam-pair-status');
+                    if (st) st.textContent = '✅ گوشی کارگردان پیدا شد! در حال ارسال تصویر...';
+                    startAutoCameraWebRTCOffer();
+                } else if (state.role === 'director') {
+                    const st = document.getElementById('dir-pair-status');
+                    if (st) st.textContent = '✅ دوربین ۱ پیدا شد! در حال دریافت تصویر...';
+                }
+            } else if (status === 'peer_disconnected') {
+                state.androidPeerConnected = false;
+                updateConnectionBadge('ready', 'در حال جستجوی مجدد...');
+                if (state.role === 'camera' && hasAndroidBridge()) {
+                    setTimeout(() => { try { window.AndroidBridge.startCameraDiscovery(); } catch (e) {} }, 1000);
+                }
+            }
+        };
+
+        window.onAndroidSignal = async function(rawJson) {
+            try {
+                const msg = JSON.parse(rawJson);
+                if (msg.kind === 'offer' && state.role === 'director') {
+                    await handleAutoDirectorOffer(msg.sdp);
+                } else if (msg.kind === 'answer' && state.role === 'camera') {
+                    if (state.rtcPeerConn && msg.sdp) {
+                        await state.rtcPeerConn.setRemoteDescription(new RTCSessionDescription({ type: 'answer', sdp: msg.sdp }));
+                        await enforceLowLatencyWebRTC(state.rtcPeerConn);
+                        updateConnectionBadge('connected', 'متصل به کارگردان');
+                        document.getElementById('cam-offline-pair-box')?.classList.add('hidden');
+                    }
+                } else if (msg.kind === 'ice' && msg.candidate && state.rtcPeerConn) {
+                    try { await state.rtcPeerConn.addIceCandidate(new RTCIceCandidate(msg.candidate)); } catch (e) {}
+                }
+            } catch (e) {}
+        };
+
+        async function startAutoCameraWebRTCOffer() {
+            if (state.rtcPeerConn) { try { state.rtcPeerConn.close(); } catch (e) {} }
+            const pc = new RTCPeerConnection(RTC_CONFIG);
+            state.rtcPeerConn = pc;
+            const dc = pc.createDataChannel('prism_ctrl', { ordered: true });
+            setupDataChannel(dc);
+
+            if (!state.localCamStream || !state.localCamStream.getVideoTracks().some(t => t.readyState === 'live')) {
+                await startHardwareCamera();
+            }
+            state.activeVideoSender = null;
+            state.activeAudioSender = null;
+            const vt = state.localCamStream?.getVideoTracks().find(t => t.readyState === 'live');
+            if (vt && state.localCamStream) state.activeVideoSender = pc.addTrack(vt, state.localCamStream);
+            const at = state.localCamStream?.getAudioTracks?.().find(t => t.readyState === 'live');
+            if (at) state.activeAudioSender = pc.addTrack(at, state.localCamStream);
+
+            pc.onicecandidate = (e) => {
+                if (e.candidate) sendAutoSignal({ kind: 'ice', candidate: e.candidate });
+            };
+            pc.onconnectionstatechange = () => {
+                if (pc.connectionState === 'connected') {
+                    enforceLowLatencyWebRTC(pc);
+                    updateConnectionBadge('connected', 'روی آنتن • متصل');
+                    document.getElementById('cam-offline-pair-box')?.classList.add('hidden');
+                }
+            };
+
+            const offer = await pc.createOffer({ offerToReceiveAudio: false, offerToReceiveVideo: false });
+            offer.sdp = boostSdpForHotspot720p(offer.sdp);
+            await pc.setLocalDescription(offer);
+            sendAutoSignal({ kind: 'offer', sdp: pc.localDescription.sdp });
+        }
+
+        async function handleAutoDirectorOffer(sdp) {
+            await unlockHotspotLocalIpCandidates();
+            if (state.rtcPeerConn) { try { state.rtcPeerConn.close(); } catch (e) {} }
+            const pc = new RTCPeerConnection(RTC_CONFIG);
+            state.rtcPeerConn = pc;
+            pc.ondatachannel = (e) => { setupDataChannel(e.channel); };
+
+            const receiverStream = new MediaStream();
+            pc.ontrack = (event) => {
+                configureReceiverPlayout(pc);
+                const supplied = event.streams && event.streams[0];
+                const tracks = supplied ? supplied.getTracks() : [event.track];
+                tracks.forEach(t => { if (!receiverStream.getTracks().some(x => x.id === t.id)) try { receiverStream.addTrack(t); } catch (e) {} });
+                if (event.track && !receiverStream.getTracks().some(x => x.id === event.track.id)) try { receiverStream.addTrack(event.track); } catch (e) {}
+                attachRemoteCamera1Stream(receiverStream);
+                if (event.track) event.track.onunmute = () => { try { v1PlayRemoteCamera(); } catch (e) {} };
+            };
+            pc.onicecandidate = (e) => {
+                if (e.candidate) sendAutoSignal({ kind: 'ice', candidate: e.candidate });
+            };
+            pc.onconnectionstatechange = () => {
+                if (pc.connectionState === 'connected') {
+                    configureReceiverPlayout(pc);
+                    updateConnectionBadge('connected', 'دوربین ۱ متصل است');
+                    document.getElementById('dir-offline-pair-box')?.classList.add('hidden');
+                }
+            };
+            await pc.setRemoteDescription(new RTCSessionDescription({ type: 'offer', sdp }));
+            const answer = await pc.createAnswer();
+            answer.sdp = boostSdpForHotspot720p(answer.sdp);
+            await pc.setLocalDescription(answer);
+            sendAutoSignal({ kind: 'answer', sdp: pc.localDescription.sdp });
+        }
+
+        function waitForIceGatheringComplete(pc, timeoutMs = 1500) {
+            return new Promise((resolve) => {
+                if (pc.iceGatheringState === 'complete') { resolve(); return; }
+                let done = false;
+                const finish = () => {
+                    if (done) return;
+                    done = true;
+                    pc.removeEventListener('icegatheringstatechange', onState);
+                    pc.removeEventListener('icecandidate', onCand);
+                    resolve();
+                };
+                const onState = () => { if (pc.iceGatheringState === 'complete') finish(); };
+                const onCand = (e) => { if (!e.candidate) finish(); };
+                pc.addEventListener('icegatheringstatechange', onState);
+                pc.addEventListener('icecandidate', onCand);
+                setTimeout(finish, timeoutMs);
+            });
+        }
+
+        // ============================================================================
+        // 4. ORIENTATION & ROTATION MATRIX (Default 270°)
+        // ============================================================================
+        function setCam1Rotation(deg) {
+            state.cam1Rotation = ((deg % 360) + 360) % 360;
+            const badge = document.getElementById('dir-rot-badge');
+            if (badge) badge.innerText = `${state.cam1Rotation}°`;
+            const camInd = document.getElementById('cam-rot-indicator');
+            if (camInd) camInd.innerText = `ROT: ${state.cam1Rotation}°`;
+            const camBtnVal = document.getElementById('cam-btn-rot-val');
+            if (camBtnVal) camBtnVal.innerText = `${state.cam1Rotation}°`;
+
+            [0, 90, 180, 270].forEach(d => {
+                const btn = document.getElementById(`rot-btn-${d}`);
+                if (btn) {
+                    btn.className = (d === state.cam1Rotation)
+                        ? 'py-1-5 rounded bg-amber-500 text-black font-mono font-bold text-xs'
+                        : 'py-1-5 rounded bg-slate-800 text-slate-300 font-mono font-bold text-xs';
+                }
+            });
+        }
+
+        function cycleCam1Rotation() { setCam1Rotation((state.cam1Rotation + 90) % 360); }
+
+        function rotateCameraFeedFromNode() {
+            const next = (state.cam1Rotation + 90) % 360;
+            setCam1Rotation(next);
+            sendDataChannelMsg({ type: 'cam-rotate', rotation: next });
+        }
+
+        function toggleCam1Mirror() {
+            state.cam1Mirror = !state.cam1Mirror;
+            const btn = document.getElementById('btn-cam1-mirror');
+            if (btn) btn.innerText = state.cam1Mirror ? '↔️ قرینه: روشن' : '↔️ قرینه: خاموش';
+        }
+
+        // ============================================================================
+        // 5. WEBRTC LOW-LATENCY & 1-SECOND AUTO A/V SYNC ENGINE
+        // ============================================================================
+        async function unlockHotspotLocalIpCandidates() {
+            if (!navigator.mediaDevices?.getUserMedia) return;
+            try {
+                const tmp = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
+                tmp.getTracks().forEach(t => t.stop());
+            } catch (e) {}
+        }
+
+        function boostSdpForHotspot720p(sdpStr) {
+            if (!sdpStr) return sdpStr;
+            let lines = sdpStr.split('\r\n');
+            let out = [];
+            for (let i = 0; i < lines.length; i++) {
+                out.push(lines[i]);
+                if (lines[i].startsWith('m=video')) {
+                    out.push('b=AS:3200');
+                    out.push('b=TIAS:3200000');
+                } else if (lines[i].startsWith('a=fmtp:') && !lines[i].includes('x-google-start-bitrate')) {
+                    out[out.length - 1] = lines[i] + ';x-google-min-bitrate=1800;x-google-start-bitrate=2600;x-google-max-bitrate=3400';
+                }
+            }
+            return out.join('\r\n');
+        }
+
+        async function enforceLowLatencyWebRTC(pc) {
+            if (!pc) return;
+            for (const sender of pc.getSenders()) {
+                if (!sender.track) continue;
+                if (sender.track.kind === 'video') {
+                    state.activeVideoSender = sender;
+                    try {
+                        if ('contentHint' in sender.track) sender.track.contentHint = 'motion';
+                        const params = sender.getParameters() || {};
+                        if (!params.encodings || !params.encodings.length) params.encodings = [{}];
+                        params.encodings[0].maxBitrate = 3000000;
+                        params.encodings[0].maxFramerate = 30;
+                        params.encodings[0].scaleResolutionDownBy = 1.0;
+                        params.degradationPreference = 'maintain-framerate';
+                        await sender.setParameters(params);
+                    } catch (e) {}
+                } else if (sender.track.kind === 'audio') {
+                    state.activeAudioSender = sender;
+                    try {
+                        const params = sender.getParameters() || {};
+                        if (!params.encodings || !params.encodings.length) params.encodings = [{}];
+                        params.encodings[0].maxBitrate = 128000;
+                        await sender.setParameters(params);
+                    } catch (e) {}
+                }
+            }
+        }
+
+        function configureReceiverPlayout(pc) {
+            if (!pc || !pc.getReceivers) return;
+            try {
+                pc.getReceivers().forEach(receiver => {
+                    if (receiver.track && (receiver.track.kind === 'audio' || receiver.track.kind === 'video')) {
+                        if ('playoutDelayHint' in receiver) receiver.playoutDelayHint = 0;
+                        if ('jitterBufferTarget' in receiver) receiver.jitterBufferTarget = 0;
+                    }
+                });
+            } catch (e) {}
+        }
+
+        function toggleAutoAvSync() {
+            state.autoAvSyncEnabled = !state.autoAvSyncEnabled;
+            const btn = document.getElementById('btn-auto-sync-toggle');
+            if (btn) {
+                btn.textContent = state.autoAvSyncEnabled ? '🛡️ چک ۱ ثانیه‌ای: روشن' : '🛡️ چک ۱ ثانیه‌ای: خاموش';
+                btn.className = state.autoAvSyncEnabled
+                    ? 'text-[10px] bg-emerald-700/40 text-emerald-200 border border-emerald-500/50 px-2 py-0-5 rounded font-bold transition'
+                    : 'text-[10px] bg-slate-800 text-slate-400 border border-slate-700 px-2 py-0-5 rounded font-bold transition';
+            }
+            if (!state.autoAvSyncEnabled && state.cam1DelayNode && state.audioCtx) {
+                state.currentAudioDelaySec = 0;
+                state.cam1DelayNode.delayTime.setTargetAtTime(0, state.audioCtx.currentTime, 0.05);
+            }
+        }
+
+        function flushRemoteVideoBuffer(reason = 'auto') {
+            const now = Date.now();
+            if (reason === 'auto' && now - state.lastHardFlushAt < 3500) return;
+            state.lastHardFlushAt = now;
+            const v1 = document.getElementById('hidden-cam1-video');
+            if (!v1 || !state.remoteCam1Stream) return;
+            try {
+                configureReceiverPlayout(state.rtcPeerConn);
+                v1.srcObject = null;
+                v1.srcObject = state.remoteCam1Stream;
+                v1.muted = true;
+                v1.play().catch(() => {});
+            } catch (e) {}
+            if (state.cam1DelayNode && state.audioCtx) {
+                state.currentAudioDelaySec = 0;
+                state.cam1DelayNode.delayTime.setTargetAtTime(0, state.audioCtx.currentTime, 0.04);
+            }
+        }
+
+        async function manualResyncNow() {
+            const badge = document.getElementById('av-sync-badge');
+            if (badge) {
+                badge.textContent = '⚡ در حال همگام‌سازی فوری صدا و تصویر...';
+                badge.className = 'text-[10px] font-mono px-2 py-0-5 rounded bg-cyan-950 border border-cyan-500/50 text-cyan-300';
+            }
+            flushRemoteVideoBuffer('manual');
+            sendRemoteCommand({ type: 'requestKeyFrame' });
+            setTimeout(() => runAvSyncCheck(), 400);
+        }
+
+        function startAvSyncWatchdog(videoEl) {
+            if (state.avSyncTimer) clearInterval(state.avSyncTimer);
+            state.prevRtpStats = {
+                videoJbDelay: 0, videoJbEmitted: 0,
+                audioJbDelay: 0, audioJbEmitted: 0,
+                framesDecoded: 0, framesReceived: 0, framesDropped: 0
+            };
+            state.highDelayStreak = 0;
+
+            if (videoEl && 'requestVideoFrameCallback' in videoEl) {
+                const trackFrame = () => {
+                    state.lastVideoFrameTs = performance.now();
+                    if (state.role === 'director' && videoEl.srcObject) {
+                        try { videoEl.requestVideoFrameCallback(trackFrame); } catch (e) {}
+                    }
+                };
+                try { videoEl.requestVideoFrameCallback(trackFrame); } catch (e) {}
+            }
+            state.avSyncTimer = setInterval(runAvSyncCheck, 1000);
+        }
+
+        async function runAvSyncCheck() {
+            if (state.role !== 'director') return;
+            const pc = state.rtcPeerConn;
+            const v1 = document.getElementById('hidden-cam1-video');
+            const badge = document.getElementById('av-sync-badge');
+            if (!pc || pc.connectionState !== 'connected' || !v1 || !v1.srcObject) return;
+
+            configureReceiverPlayout(pc);
+
+            try {
+                const stats = await pc.getStats();
+                let vStat = null;
+                let aStat = null;
+                stats.forEach(s => {
+                    if (s.type === 'inbound-rtp' && s.kind === 'video') vStat = s;
+                    if (s.type === 'inbound-rtp' && s.kind === 'audio') aStat = s;
+                    if (s.type === 'candidate-pair' && s.state === 'succeeded' && s.nominated && typeof s.currentRoundTripTime === 'number') {
+                        state.lastRttMs = Math.round(s.currentRoundTripTime * 1000);
+                    }
+                });
+                if (!vStat) return;
+
+                const dVDelay = (vStat.jitterBufferDelay || 0) - state.prevRtpStats.videoJbDelay;
+                const dVCount = (vStat.jitterBufferEmittedCount || 0) - state.prevRtpStats.videoJbEmitted;
+                const dADelay = aStat ? ((aStat.jitterBufferDelay || 0) - state.prevRtpStats.audioJbDelay) : 0;
+                const dACount = aStat ? ((aStat.jitterBufferEmittedCount || 0) - state.prevRtpStats.audioJbEmitted) : 0;
+
+                const vJbMs = dVCount > 0 ? Math.round((dVDelay / dVCount) * 1000) : 0;
+                const aJbMs = dACount > 0 ? Math.round((dADelay / dACount) * 1000) : 0;
+                const queuedFrames = Math.max(0, (vStat.framesReceived || 0) - (vStat.framesDecoded || 0) - (vStat.framesDropped || 0));
+
+                state.prevRtpStats.videoJbDelay = vStat.jitterBufferDelay || 0;
+                state.prevRtpStats.videoJbEmitted = vStat.jitterBufferEmittedCount || 0;
+                state.prevRtpStats.audioJbDelay = aStat ? (aStat.jitterBufferDelay || 0) : 0;
+                state.prevRtpStats.audioJbEmitted = aStat ? (aStat.jitterBufferEmittedCount || 0) : 0;
+                state.prevRtpStats.framesDecoded = vStat.framesDecoded || 0;
+                state.prevRtpStats.framesReceived = vStat.framesReceived || 0;
+                state.prevRtpStats.framesDropped = vStat.framesDropped || 0;
+
+                const driftMs = vJbMs - aJbMs;
+                const absDriftMs = Math.abs(driftMs);
+                const frameAgeMs = state.lastVideoFrameTs > 0 ? Math.round(performance.now() - state.lastVideoFrameTs) : 0;
+
+                let actionNote = '';
+                if (state.autoAvSyncEnabled) {
+                    if (vJbMs > 380 || driftMs > 380 || queuedFrames > 10) {
+                        state.highDelayStreak++;
+                        flushRemoteVideoBuffer('auto');
+                        if (state.highDelayStreak >= 2) {
+                            sendRemoteCommand({ type: 'requestKeyFrame' });
+                            state.highDelayStreak = 0;
+                        }
+                        actionNote = ' • ⚡ تخلیه خودکار بافر تصویر';
+                    } else {
+                        state.highDelayStreak = 0;
+                        if (state.cam1DelayNode && state.audioCtx) {
+                            const targetDelaySec = driftMs > 25 ? Math.min(0.38, driftMs / 1000) : 0;
+                            if (Math.abs(targetDelaySec - state.currentAudioDelaySec) > 0.015) {
+                                state.currentAudioDelaySec = targetDelaySec;
+                                state.cam1DelayNode.delayTime.setTargetAtTime(targetDelaySec, state.audioCtx.currentTime, 0.15);
+                                if (targetDelaySec > 0) {
+                                    actionNote = ` • 🎛️ همترازی صدا (${Math.round(targetDelaySec * 1000)}ms)`;
+                                }
+                            }
+                        }
+                    }
+
+                    if (v1.paused) v1.play().catch(() => {});
+                    if (v1.buffered && v1.buffered.length > 0) {
+                        const end = v1.buffered.end(v1.buffered.length - 1);
+                        if (end - v1.currentTime > 0.08) v1.currentTime = end - 0.01;
+                    }
+                }
+
+                // Align local Media (audio + video) to Presenter (cam1) latency
+                const targetMediaDelayMs = Math.max(0, Math.min(350, Math.round((state.lastRttMs || 10) / 2 + vJbMs + 30)));
+                state.mediaSyncDelayMs = state.autoAvSyncEnabled ? targetMediaDelayMs : 0;
+                if (state.mediaAudioDelayNode && state.audioCtx) {
+                    state.mediaAudioDelayNode.delayTime.setTargetAtTime(state.mediaSyncDelayMs / 1000, state.audioCtx.currentTime, 0.15);
+                }
+
+                if (badge) {
+                    const isGood = absDriftMs <= 60 && vJbMs <= 120;
+                    const isWarn = !isGood && absDriftMs <= 250 && vJbMs <= 300;
+                    badge.className = isGood
+                        ? 'text-[10px] font-mono px-2 py-0-5 rounded bg-emerald-950/70 border border-emerald-500/40 text-emerald-300'
+                        : (isWarn
+                            ? 'text-[10px] font-mono px-2 py-0-5 rounded bg-amber-950/70 border border-amber-500/40 text-amber-300'
+                            : 'text-[10px] font-mono px-2 py-0-5 rounded bg-red-950/70 border border-red-500/40 text-red-300');
+                    badge.textContent = `⏱️ چک ۱ث: اختلاف ${driftMs >= 0 ? '+' : ''}${driftMs}ms | بافر تصویر ${vJbMs}ms${frameAgeMs > 200 ? ` | فریم ${frameAgeMs}ms` : ''}${actionNote}`;
+                }
+            } catch (e) {}
+        }
+
+        // ============================================================================
+        // 6. CAMERA 1 HARDWARE, AUDIO INPUTS & LENSES
+        // ============================================================================
+        async function refreshAudioInputs() {
+            const select = document.getElementById('cam-audio-input-select');
+            if (!navigator.mediaDevices?.enumerateDevices || !select) return;
+            try {
+                const devices = await navigator.mediaDevices.enumerateDevices();
+                state.availableAudioInputs = devices.filter(d => d.kind === 'audioinput');
+                const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+                select.innerHTML = '<option value="">میکروفون پیش‌فرض گوشی</option>' + state.availableAudioInputs.map((d, i) =>
+                    `<option value="${esc(d.deviceId)}">${esc(d.label || `میکروفون ${i + 1}`)}</option>`
+                ).join('');
+                const activeId = state.rawAudioTrack?.getSettings?.().deviceId || state.currentAudioDeviceId;
+                if (activeId && state.availableAudioInputs.some(d => d.deviceId === activeId)) select.value = activeId;
+            } catch (e) {}
+        }
+
+        async function changeAudioInput(deviceId) {
+            if (state.role !== 'camera') return;
+            try {
+                const audio = { echoCancellation: { ideal: false }, noiseSuppression: { ideal: false }, autoGainControl: { ideal: false } };
+                if (deviceId) audio.deviceId = { exact: deviceId };
+                const candidateStream = await navigator.mediaDevices.getUserMedia({ audio, video: false });
+                const newTrack = candidateStream.getAudioTracks()[0];
+                if (!newTrack) return;
+                const oldTrack = state.rawAudioTrack;
+                if (state.activeAudioSender && state.rtcPeerConn && state.rtcPeerConn.signalingState !== 'closed') {
+                    await state.activeAudioSender.replaceTrack(newTrack);
+                }
+                if (state.localCamStream) {
+                    if (oldTrack) state.localCamStream.removeTrack(oldTrack);
+                    state.localCamStream.addTrack(newTrack);
+                }
+                state.rawAudioTrack = newTrack;
+                state.currentAudioDeviceId = newTrack.getSettings?.().deviceId || deviceId || '';
+                if (oldTrack && oldTrack !== newTrack) oldTrack.stop();
+            } catch (e) {}
+        }
+
+        function classifyLensRole(labelStr, index, total) {
+            const l = (labelStr || '').toLowerCase();
+            if (l.includes('front') || l.includes('user') || l.includes('selfie') || l.includes('سلفی')) return 'front';
+            if (l.includes('ultra') || l.includes('0.5') || l.includes('0.6') || l.includes('wide angle')) return 'ultrawide';
+            if (l.includes('tele') || l.includes('zoom') || l.includes('periscope') || l.includes('portrait') || l.includes('2x') || l.includes('3x') || l.includes('5x')) return 'tele';
+            if (total >= 3 && index === total - 1 && !l.includes('front')) return 'tele';
+            return 'wide';
+        }
+
+        async function enumeratePhysicalLenses() {
+            try {
+                const devices = await navigator.mediaDevices.enumerateDevices();
+                const videoDevices = devices.filter(d => d.kind === 'videoinput');
+                state.availableLenses = videoDevices.map((d, idx) => {
+                    const rawLabel = d.label || `لنز دوربین ${idx + 1}`;
+                    const role = classifyLensRole(rawLabel, idx, videoDevices.length);
+                    const roleBadge = role === 'tele' ? '🔭 تله' : (role === 'ultrawide' ? '📐 اولتراواید' : (role === 'front' ? '🤳 سلفی' : '📷 اصلی'));
+                    return { deviceId: d.deviceId, label: `${roleBadge} • ${rawLabel}`, rawLabel, role };
+                });
+
+                const selectEl = document.getElementById('cam-lens-select');
+                if (selectEl && state.availableLenses.length > 0) {
+                    selectEl.innerHTML = state.availableLenses.map((l) =>
+                        `<option value="${l.deviceId}" ${l.deviceId === state.currentDeviceId ? 'selected' : ''}>${l.label}</option>`
+                    ).join('');
+                }
+                sendDataChannelMsg({ type: 'lenses', lenses: state.availableLenses, current: state.currentDeviceId });
+            } catch (e) {}
+        }
+
+        async function switchOpticalStep(targetFactor) {
+            const factor = Number(targetFactor) || 1.0;
+            const backLenses = (state.availableLenses || []).filter(l => l.role !== 'front');
+            let targetLens = null;
+
+            if (factor < 1.0) targetLens = backLenses.find(l => l.role === 'ultrawide') || backLenses[1] || backLenses[0];
+            else if (factor >= 2.0) targetLens = backLenses.find(l => l.role === 'tele') || backLenses[backLenses.length - 1] || backLenses[0];
+            else targetLens = backLenses.find(l => l.role === 'wide') || backLenses[0];
+
+            if (targetLens && targetLens.deviceId && targetLens.deviceId !== state.currentDeviceId && backLenses.length > 1) {
+                state.currentDeviceId = targetLens.deviceId;
+                const sel = document.getElementById('cam-lens-select');
+                if (sel) sel.value = targetLens.deviceId;
+                const sensorZoom = (targetLens.role === 'tele' && factor >= 2.0) ? Math.max(1.0, factor / 2.0) : Math.max(1.0, factor);
+                await startHardwareCamera({ deviceId: targetLens.deviceId });
+                scheduleCameraZoom(sensorZoom);
+            } else {
+                scheduleCameraZoom(Math.max(1.0, factor));
+            }
+        }
+
+        function sendRemoteOpticalStep(factor) {
+            const f = Number(factor) || 1.0;
+            const lbl = document.getElementById('remote-zoom-label');
+            if (lbl) lbl.innerText = `${f.toFixed(1)}x`;
+            const sl = document.getElementById('remote-zoom-slider');
+            if (sl) sl.value = Math.max(1, f);
+            sendRemoteCommand({ type: 'opticalStep', value: f });
+        }
+
+        function applyColorBoostUI(level) {
+            state.colorBoostLevel = level % 3;
+            const labels = ['🎨 رنگ: عادی (شیائومی)', '🎨 رنگ: زنده (سامسونگ S24)', '🎨 رنگ: فوق‌زنده'];
+            const camBtn = document.getElementById('btn-cam-color-boost');
+            if (camBtn) {
+                camBtn.innerText = labels[state.colorBoostLevel];
+                camBtn.className = state.colorBoostLevel === 0
+                    ? 'px-2 py-1 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 text-[10px] font-bold'
+                    : 'px-2 py-1 rounded-lg bg-emerald-600 border border-emerald-400 text-white text-[10px] font-bold';
+            }
+            const dirBtn = document.getElementById('btn-dir-color-boost');
+            if (dirBtn) {
+                dirBtn.innerText = labels[state.colorBoostLevel];
+                dirBtn.className = state.colorBoostLevel === 0
+                    ? 'text-xs bg-slate-800 text-slate-200 border border-slate-700 px-2-5 py-1-5 rounded-lg font-bold transition'
+                    : 'text-xs bg-emerald-600 text-white border border-emerald-400 px-2-5 py-1-5 rounded-lg font-bold transition';
+            }
+            const localVid = document.getElementById('cam-local-video');
+            if (localVid) {
+                localVid.style.filter = state.colorBoostLevel === 1
+                    ? 'saturate(1.42) contrast(1.08) brightness(1.03)'
+                    : (state.colorBoostLevel === 2 ? 'saturate(1.65) contrast(1.12) brightness(1.04)' : 'none');
+            }
+        }
+
+        async function applyHardwareSensorSaturation(level) {
+            const track = state.rawVideoTrack;
+            if (!track || !track.getCapabilities) return;
+            try {
+                const caps = track.getCapabilities();
+                const adv = {};
+                if (caps.saturation && typeof caps.saturation.max === 'number') {
+                    const minS = caps.saturation.min ?? 0;
+                    const maxS = caps.saturation.max ?? 100;
+                    const midS = (minS + maxS) / 2;
+                    adv.saturation = level === 0 ? midS : (level === 1 ? midS + (maxS - midS) * 0.55 : maxS * 0.9);
+                }
+                if (Object.keys(adv).length > 0) await track.applyConstraints({ advanced: [adv] });
+            } catch (e) {}
+        }
+
+        function cycleCameraColorBoost() {
+            const next = (state.colorBoostLevel + 1) % 3;
+            applyColorBoostUI(next);
+            applyHardwareSensorSaturation(next);
+            sendDataChannelMsg({ type: 'cam-color', level: next });
+        }
+
+        function cycleDirectorColorBoost() {
+            const next = (state.colorBoostLevel + 1) % 3;
+            applyColorBoostUI(next);
+            sendRemoteCommand({ type: 'colorBoost', level: next });
+        }
+
+        async function startHardwareCamera(options = {}) {
+            if (state.localCamStream) state.localCamStream.getTracks().forEach(t => t.stop());
+
+            const videoConstraints = {
+                width: { ideal: 1280 },
+                height: { ideal: 720 },
+                frameRate: { ideal: 30, max: 30 }
+            };
+            if (options.deviceId) videoConstraints.deviceId = { exact: options.deviceId };
+            else videoConstraints.facingMode = { ideal: state.currentFacingMode };
+
+            try {
+                const audioConstraints = {
+                    echoCancellation: { ideal: false },
+                    noiseSuppression: { ideal: false },
+                    autoGainControl: { ideal: false }
+                };
+                const requestedAudioDeviceId = options.audioDeviceId || state.currentAudioDeviceId;
+                if (requestedAudioDeviceId) audioConstraints.deviceId = { ideal: requestedAudioDeviceId };
+
+                let stream = null;
+                try {
+                    stream = await navigator.mediaDevices.getUserMedia({ video: videoConstraints, audio: audioConstraints });
+                } catch (firstErr) {
+                    stream = await navigator.mediaDevices.getUserMedia({ video: { width: { ideal: 1280 }, height: { ideal: 720 } }, audio: true });
+                }
+
+                state.localCamStream = stream;
+                state.rawVideoTrack = stream.getVideoTracks()[0];
+                state.rawAudioTrack = stream.getAudioTracks()[0] || null;
+                if (state.rawAudioTrack) {
+                    const audioSettings = state.rawAudioTrack.getSettings ? state.rawAudioTrack.getSettings() : {};
+                    if (audioSettings.deviceId) state.currentAudioDeviceId = audioSettings.deviceId;
+                }
+                if (state.rawVideoTrack && 'contentHint' in state.rawVideoTrack) state.rawVideoTrack.contentHint = 'motion';
+
+                const settings = state.rawVideoTrack.getSettings();
+                if (settings.deviceId) state.currentDeviceId = settings.deviceId;
+
+                try {
+                    const caps = state.rawVideoTrack.getCapabilities ? state.rawVideoTrack.getCapabilities() : {};
+                    const adv = {};
+                    if (caps.focusMode && caps.focusMode.includes('continuous')) adv.focusMode = 'continuous';
+                    if (caps.exposureMode && caps.exposureMode.includes('continuous')) adv.exposureMode = 'continuous';
+                    if (caps.whiteBalanceMode && caps.whiteBalanceMode.includes('continuous')) adv.whiteBalanceMode = 'continuous';
+                    if (Object.keys(adv).length > 0) await state.rawVideoTrack.applyConstraints({ advanced: [adv] });
+                    if (state.colorBoostLevel > 0) await applyHardwareSensorSaturation(state.colorBoostLevel);
+                    if (caps.zoom) {
+                        const zSlider = document.getElementById('cam-zoom-slider');
+                        if (zSlider) {
+                            zSlider.min = caps.zoom.min || 1;
+                            zSlider.max = Math.min(caps.zoom.max || 8, 10);
+                            zSlider.step = caps.zoom.step || 0.1;
+                        }
+                    }
+                } catch (e) {}
+
+                const vid = document.getElementById('cam-local-video');
+                if (vid) {
+                    vid.muted = true;
+                    vid.defaultMuted = true;
+                    vid.playsInline = true;
+                    vid.srcObject = stream;
+                    await vid.play().catch(() => {});
+                }
+
+                document.getElementById('cam-permission-overlay').classList.add('hidden');
+                document.getElementById('cam-res-indicator').innerText = `RES: ${vid.videoWidth || 1280}x${vid.videoHeight || 720}`;
+
+                await enumeratePhysicalLenses();
+                await refreshAudioInputs().catch(() => {});
+                await syncActiveStreamTrackToWebRTC();
+                return true;
+            } catch (err) {
+                document.getElementById('cam-permission-overlay').classList.remove('hidden');
+                document.getElementById('cam-error-reason').innerText = `خطای دسترسی دوربین/میکروفون: ${err.message}`;
+                return false;
+            }
+        }
+
+        async function changePhysicalLens(deviceId) {
+            if (!deviceId) return;
+            state.currentDeviceId = deviceId;
+            await startHardwareCamera({ deviceId });
+            scheduleCameraZoom(state.currentZoom);
+        }
+
+        async function triggerRefocus() {
+            if (!state.rawVideoTrack || !state.rawVideoTrack.getCapabilities) return;
+            try {
+                const caps = state.rawVideoTrack.getCapabilities();
+                if (caps.focusMode && caps.focusMode.includes('continuous')) {
+                    await state.rawVideoTrack.applyConstraints({ advanced: [{ focusMode: 'continuous' }] });
+                }
+            } catch (e) {}
+        }
+
+        function scheduleCameraZoom(val) {
+            const z = parseFloat(val) || 1.0;
+            state.currentZoom = z;
+            const zVal = document.getElementById('cam-zoom-val');
+            if (zVal) zVal.innerText = z.toFixed(1) + 'x';
+            const zSlider = document.getElementById('cam-zoom-slider');
+            if (zSlider) zSlider.value = z;
+
+            if (state.zoomPending) return;
+            state.zoomPending = true;
+            requestAnimationFrame(async () => {
+                await applyLocalCameraZoom(state.currentZoom);
+                setTimeout(() => { state.zoomPending = false; }, 60);
+            });
+        }
+
+        async function applyLocalCameraZoom(z) {
+            const backLenses = (state.availableLenses || []).filter(l => l.role !== 'front');
+            const teleLens = backLenses.find(l => l.role === 'tele');
+            const wideLens = backLenses.find(l => l.role === 'wide') || backLenses[0];
+            if (teleLens && wideLens && teleLens.deviceId !== wideLens.deviceId && !state.lensAutoSwitching) {
+                if (z >= 2.0 && state.currentDeviceId === wideLens.deviceId) {
+                    state.lensAutoSwitching = true;
+                    state.currentDeviceId = teleLens.deviceId;
+                    await startHardwareCamera({ deviceId: teleLens.deviceId });
+                    state.lensAutoSwitching = false;
+                } else if (z < 1.8 && state.currentDeviceId === teleLens.deviceId) {
+                    state.lensAutoSwitching = true;
+                    state.currentDeviceId = wideLens.deviceId;
+                    await startHardwareCamera({ deviceId: wideLens.deviceId });
+                    state.lensAutoSwitching = false;
+                }
+            }
+
+            const activeTrack = state.rawVideoTrack;
+            let usedHardwareZoom = false;
+            if (activeTrack && activeTrack.getCapabilities) {
+                try {
+                    const caps = activeTrack.getCapabilities();
+                    if (caps.zoom) {
+                        const clampedZoom = Math.max(caps.zoom.min, Math.min(caps.zoom.max, z));
+                        await activeTrack.applyConstraints({ advanced: [{ zoom: clampedZoom }] });
+                        usedHardwareZoom = true;
+                    }
+                } catch (e) {}
+            }
+            const ind = document.getElementById('cam-zoom-indicator');
+            if (ind) ind.innerText = usedHardwareZoom ? `ZOOM: ${z.toFixed(1)}x (HW)` : `ZOOM: ${z.toFixed(1)}x`;
+        }
+
+        async function syncActiveStreamTrackToWebRTC() {
+            if (state.activeVideoSender && state.rawVideoTrack) {
+                try { await state.activeVideoSender.replaceTrack(state.rawVideoTrack); } catch (e) {}
+            }
+            if (state.activeAudioSender && state.rawAudioTrack) {
+                try { await state.activeAudioSender.replaceTrack(state.rawAudioTrack); } catch (e) {}
+            }
+        }
+
+        // ============================================================================
+        // 7. OFFLINE DATACHANNEL CONTROL (ZERO INTERNET)
+        // ============================================================================
+        function setupDataChannel(dc) {
+            state.ctrlChannel = dc;
+            dc.onopen = () => {
+                if (state.role === 'camera') {
+                    sendDataChannelMsg({ type: 'lenses', lenses: state.availableLenses, current: state.currentDeviceId });
+                    sendDataChannelMsg({ type: 'cam-rotate', rotation: state.cam1Rotation });
+                }
+            };
+            dc.onmessage = (evt) => {
+                try {
+                    const data = JSON.parse(evt.data);
+                    if (state.role === 'camera') handleIncomingControlCommand(data);
+                    else if (state.role === 'director') handleIncomingCameraData(data);
+                } catch (e) {}
+            };
+        }
+
+        function sendDataChannelMsg(obj) {
+            if (state.ctrlChannel && state.ctrlChannel.readyState === 'open') {
+                try { state.ctrlChannel.send(JSON.stringify(obj)); } catch (e) {}
+            }
+        }
+
+        function handleIncomingCameraData(data) {
+            if (data.type === 'lenses') populateRemoteLensesDropdown(data.lenses, data.current);
+            else if (data.type === 'cam-rotate') setCam1Rotation(data.rotation ?? 270);
+            else if (data.type === 'cam-color') applyColorBoostUI(data.level || 0);
+        }
+
+        // ============================================================================
+        // 8. NAVIGATION & ROLES
+        // ============================================================================
+        function switchRole(targetRole) {
+            cleanupConnections();
+            state.role = targetRole;
+            document.getElementById('view-launcher').classList.add('hidden');
+            document.getElementById('view-camera-node').classList.add('hidden');
+            document.getElementById('view-director').classList.add('hidden');
+            document.getElementById('btn-back-home').classList.toggle('hidden', targetRole === 'launcher');
+
+            if (targetRole === 'launcher') {
+                document.getElementById('view-launcher').classList.remove('hidden');
+            } else if (targetRole === 'camera') {
+                document.getElementById('view-camera-node').classList.remove('hidden');
+                setCam1Rotation(270);
+                requestScreenWakeLock();
+            } else if (targetRole === 'director') {
+                document.getElementById('view-director').classList.remove('hidden');
+                setCam1Rotation(270);
+                requestScreenWakeLock();
+            }
+        }
+
+        function cleanupConnections() {
+            if (hasAndroidBridge()) { try { window.AndroidBridge.stopNetwork(); } catch (e) {} }
+            if (state.avSyncTimer) { clearInterval(state.avSyncTimer); state.avSyncTimer = null; }
+            if (state.ctrlChannel) { try { state.ctrlChannel.close(); } catch (e) {} state.ctrlChannel = null; }
+            if (state.rtcPeerConn) { try { state.rtcPeerConn.close(); } catch (e) {} state.rtcPeerConn = null; }
+            if (state.localCamStream) { state.localCamStream.getTracks().forEach(t => t.stop()); state.localCamStream = null; }
+            disconnectMixerChannel('cam1');
+            state.remoteCam1Stream = null;
+        }
+
+        function updateConnectionBadge(status, text) {
+            const dot = document.getElementById('conn-dot');
+            const label = document.getElementById('conn-text');
+            if (label) label.innerText = text;
+            if (dot) {
+                dot.className = status === 'connected' ? 'dot-sm bg-emerald-400 animate-ping' :
+                                status === 'ready' ? 'dot-sm bg-blue-400' : 'dot-sm bg-amber-400 animate-pulse';
+            }
+        }
+
+        // ============================================================================
+        // 9. ROLE 1: OFFLINE CAMERA NODE
+        // ============================================================================
+        async function initCameraNodeRole() {
+            switchRole('camera');
+            await startHardwareCamera();
+            if (hasAndroidBridge()) {
+                document.getElementById('cam-offline-pair-box')?.classList.add('hidden');
+                updateConnectionBadge('ready', 'در حال پیدا کردن خودکار کارگردان...');
+                try { window.AndroidBridge.startCameraDiscovery(); } catch (e) {}
+            } else {
+                updateConnectionBadge('ready', 'آماده ساخت کد');
+            }
+        }
+
+        async function retryCameraPermission() { await startHardwareCamera(); }
+
+        async function createOfflineCameraOffer() {
+            const st = document.getElementById('cam-pair-status');
+            if (st) st.textContent = '⏳ در حال ساخت کد اتصال هات‌اسپات...';
+
+            if (state.rtcPeerConn) { try { state.rtcPeerConn.close(); } catch (e) {} }
+            const pc = new RTCPeerConnection(RTC_CONFIG);
+            state.rtcPeerConn = pc;
+
+            const dc = pc.createDataChannel('prism_ctrl', { ordered: true });
+            setupDataChannel(dc);
+
+            if (!state.localCamStream || !state.localCamStream.getVideoTracks().some(t => t.readyState === 'live')) {
+                await startHardwareCamera();
+            }
+
+            state.activeVideoSender = null;
+            state.activeAudioSender = null;
+
+            const videoTrack = state.localCamStream?.getVideoTracks().find(t => t.readyState === 'live');
+            if (videoTrack && state.localCamStream) state.activeVideoSender = pc.addTrack(videoTrack, state.localCamStream);
+
+            const cameraAudioTrack = state.localCamStream?.getAudioTracks?.().find(t => t.readyState === 'live');
+            if (cameraAudioTrack) state.activeAudioSender = pc.addTrack(cameraAudioTrack, state.localCamStream);
+
+            pc.onconnectionstatechange = () => {
+                if (pc.connectionState === 'connected') {
+                    enforceLowLatencyWebRTC(pc);
+                    updateConnectionBadge('connected', 'روی آنتن • متصل');
+                    if (st) st.textContent = '✅ اتصال آفلاین با کارگردان برقرار شد!';
+                    document.getElementById('cam-offline-pair-box')?.classList.add('hidden');
+                } else if (pc.connectionState === 'disconnected' || pc.connectionState === 'failed') {
+                    updateConnectionBadge('ready', 'ارتباط قطع شد');
+                }
+            };
+
+            const offer = await pc.createOffer({ offerToReceiveAudio: false, offerToReceiveVideo: false });
+            offer.sdp = boostSdpForHotspot720p(offer.sdp);
+            await pc.setLocalDescription(offer);
+            await waitForIceGatheringComplete(pc, 1500);
+
+            const token = encodeOfflineSignal({ type: 'offer', sdp: pc.localDescription.sdp });
+            const outEl = document.getElementById('cam-offer-out');
+            if (outEl) outEl.value = token;
+            if (st) st.textContent = '✅ کد ساخته شد! دکمه «کپی» را بزنید و به گوشی کارگردان بفرستید.';
+        }
+
+        function autoApplyAnswerIfValid() {
+            const val = document.getElementById('cam-answer-in')?.value?.trim() || '';
+            if (val.startsWith('PRISM1:') && val.length > 80) acceptOfflineDirectorAnswer();
+        }
+
+        async function acceptOfflineDirectorAnswer() {
+            const raw = document.getElementById('cam-answer-in')?.value?.trim() || '';
+            const st = document.getElementById('cam-pair-status');
+            if (!state.rtcPeerConn || !raw) return;
+            try {
+                const decoded = decodeOfflineSignal(raw);
+                if (!decoded || decoded.type !== 'answer' || !decoded.sdp) {
+                    if (st) st.textContent = '❌ کد پاسخ نامعتبر است.';
+                    return;
+                }
+                await state.rtcPeerConn.setRemoteDescription(new RTCSessionDescription({ type: 'answer', sdp: decoded.sdp }));
+                await enforceLowLatencyWebRTC(state.rtcPeerConn);
+                updateConnectionBadge('connected', 'متصل به کارگردان');
+                if (st) st.textContent = '✅ متصل شد! در حال ارسال تصویر...';
+            } catch (e) {
+                if (st) st.textContent = '❌ خطا در اتصال: ' + (e.message || e);
+            }
+        }
+
+        function handleIncomingControlCommand(data) {
+            if (data.type === 'tally') updateCameraTallyUI(data.state);
+            else if (data.type === 'zoom') scheduleCameraZoom(data.value);
+            else if (data.type === 'opticalStep') switchOpticalStep(data.value);
+            else if (data.type === 'colorBoost') { applyColorBoostUI(data.level || 0); applyHardwareSensorSaturation(data.level || 0); }
+            else if (data.type === 'setLens') changePhysicalLens(data.deviceId);
+            else if (data.type === 'flip') flipLocalCamera();
+            else if (data.type === 'refocus') triggerRefocus();
+            else if (data.type === 'torch') toggleTorch();
+            else if (data.type === 'intercom') showCameraIntercomToast(data.text);
+            else if (data.type === 'requestKeyFrame') {
+                if (state.activeVideoSender && state.rawVideoTrack) {
+                    state.activeVideoSender.replaceTrack(state.rawVideoTrack).catch(() => {});
+                }
+            }
+        }
+
+        function updateCameraTallyUI(tallyState) {
+            const border = document.getElementById('cam-tally-border');
+            const pill = document.getElementById('cam-tally-pill');
+            const dot = document.getElementById('cam-tally-dot');
+            const label = document.getElementById('cam-tally-label');
+            border.className = 'absolute inset-0 pointer-events-none z-30 transition';
+            if (tallyState === 'pgm') {
+                border.classList.add('tally-screen-pgm');
+                pill.className = 'px-2 py-0-5 rounded-full bg-red-600 text-white font-black text-[10px] flex items-center gap-1 shadow-lg';
+                dot.className = 'dot-md bg-white animate-pulse';
+                label.innerText = 'ON AIR • روی آنتن';
+            } else {
+                pill.className = 'px-2 py-0-5 rounded-full bg-slate-800 border border-slate-600 text-slate-200 font-bold text-[10px] flex items-center gap-1';
+                dot.className = 'dot-md bg-slate-400';
+                label.innerText = 'STANDBY';
+            }
+        }
+
+        async function flipLocalCamera() {
+            state.currentDeviceId = '';
+            state.currentFacingMode = state.currentFacingMode === 'environment' ? 'user' : 'environment';
+            await startHardwareCamera();
+        }
+
+        async function toggleTorch() {
+            if (!state.rawVideoTrack) return;
+            try {
+                state.torchOn = !state.torchOn;
+                await state.rawVideoTrack.applyConstraints({ advanced: [{ torch: state.torchOn }] });
+            } catch (e) {}
+        }
+
+        function showCameraIntercomToast(msg) {
+            const toast = document.getElementById('cam-intercom-toast');
+            const txt = document.getElementById('cam-intercom-text');
+            if (txt) txt.innerText = msg;
+            if (toast) {
+                toast.classList.remove('hidden');
+                setTimeout(() => toast.classList.add('hidden'), 6000);
+            }
+        }
+
+        // ============================================================================
+        // 10. ROLE 2: OFFLINE DIRECTOR SWITCHER STUDIO
+        // ============================================================================
+        async function initDirectorRole() {
+            switchRole('director');
+            await unlockHotspotLocalIpCandidates();
+            initWebAudioMixer();
+            startCanvasCompositorLoop();
+            installReactionOverlayDrag();
+            directCutToProgram('cam1');
+            if (hasAndroidBridge()) {
+                document.getElementById('dir-offline-pair-box')?.classList.add('hidden');
+                updateConnectionBadge('ready', 'آماده اتصال خودکار دوربین...');
+                try { window.AndroidBridge.startDirectorServer(); } catch (e) {}
+            } else {
+                updateConnectionBadge('ready', 'منتظر کد دوربین');
+            }
+        }
+
+        function autoCreateAnswerIfValid() {
+            const val = document.getElementById('dir-offer-in')?.value?.trim() || '';
+            if (val.startsWith('PRISM1:') && val.length > 80) createOfflineDirectorAnswer();
+        }
+
+        async function createOfflineDirectorAnswer() {
+            const raw = document.getElementById('dir-offer-in')?.value?.trim() || '';
+            const st = document.getElementById('dir-pair-status');
+            if (!raw) return;
+            try {
+                const decoded = decodeOfflineSignal(raw);
+                if (!decoded || decoded.type !== 'offer' || !decoded.sdp) {
+                    if (st) st.textContent = '❌ کد دوربین نامعتبر است.';
+                    return;
+                }
+                if (st) st.textContent = '⏳ در حال ساخت کد پاسخ هات‌اسپات...';
+                await unlockHotspotLocalIpCandidates();
+
+                if (state.rtcPeerConn) { try { state.rtcPeerConn.close(); } catch (e) {} }
+                const pc = new RTCPeerConnection(RTC_CONFIG);
+                state.rtcPeerConn = pc;
+
+                pc.ondatachannel = (e) => { setupDataChannel(e.channel); };
+
+                const receiverStream = new MediaStream();
+                pc.ontrack = (event) => {
+                    configureReceiverPlayout(pc);
+                    const suppliedStream = event.streams && event.streams[0];
+                    const tracksToAdd = suppliedStream ? suppliedStream.getTracks() : [event.track];
+                    tracksToAdd.forEach(track => {
+                        if (!receiverStream.getTracks().some(t => t.id === track.id)) {
+                            try { receiverStream.addTrack(track); } catch (e) {}
+                        }
+                    });
+                    if (event.track && !receiverStream.getTracks().some(t => t.id === event.track.id)) {
+                        try { receiverStream.addTrack(event.track); } catch (e) {}
+                    }
+                    attachRemoteCamera1Stream(receiverStream);
+                    if (event.track) event.track.onunmute = () => { try { v1PlayRemoteCamera(); } catch (e) {} };
+                };
+
+                pc.onconnectionstatechange = async () => {
+                    if (pc.connectionState === 'connected') {
+                        configureReceiverPlayout(pc);
+                        updateConnectionBadge('connected', 'دوربین ۱ متصل است');
+                        if (st) st.textContent = '✅ ارتباط مستقیم آفلاین برقرار شد!';
+                        document.getElementById('dir-offline-pair-box')?.classList.add('hidden');
+                        try {
+                            const stats = await pc.getStats();
+                            stats.forEach(s => {
+                                if (s.type === 'candidate-pair' && s.state === 'succeeded' && s.nominated) {
+                                    const rttMs = typeof s.currentRoundTripTime === 'number' ? Math.round(s.currentRoundTripTime * 1000) : 4;
+                                    const badge = document.getElementById('p2p-route-badge');
+                                    if (badge) badge.textContent = `⚡ اتصال مستقیم هات‌اسپات فعال (پینگ: ${rttMs}ms)`;
+                                }
+                            });
+                        } catch (e) {}
+                    } else if (pc.connectionState === 'disconnected' || pc.connectionState === 'failed') {
+                        updateConnectionBadge('ready', 'ارتباط قطع شد');
+                    }
+                };
+
+                await pc.setRemoteDescription(new RTCSessionDescription({ type: 'offer', sdp: decoded.sdp }));
+                const answer = await pc.createAnswer();
+                answer.sdp = boostSdpForHotspot720p(answer.sdp);
+                await pc.setLocalDescription(answer);
+                await waitForIceGatheringComplete(pc, 1500);
+
+                const answerToken = encodeOfflineSignal({ type: 'answer', sdp: pc.localDescription.sdp });
+                const outEl = document.getElementById('dir-answer-out');
+                if (outEl) outEl.value = answerToken;
+                if (st) st.textContent = '✅ کد پاسخ ساخته شد! دکمه «کپی پاسخ» را بزنید و در گوشی دوربین پیست کنید.';
+            } catch (e) {
+                if (st) st.textContent = '❌ خطا: ' + (e.message || e);
+            }
+        }
+
+        function populateRemoteLensesDropdown(lenses, currentId) {
+            const sel = document.getElementById('remote-lens-select');
+            if (!sel || !lenses || lenses.length === 0) return;
+            sel.innerHTML = lenses.map(l =>
+                `<option value="${l.deviceId}" ${l.deviceId === currentId ? 'selected' : ''}>${l.label}</option>`
+            ).join('');
+        }
+
+        function v1PlayRemoteCamera() {
+            const v1 = document.getElementById('hidden-cam1-video');
+            if (v1 && v1.paused) v1.play().catch(() => {});
+        }
+
+        function attachRemoteCamera1Stream(stream) {
+            const v1 = document.getElementById('hidden-cam1-video');
+            if (!v1 || !stream) return;
+            state.remoteCam1Stream = stream;
+            v1.muted = true;
+            v1.defaultMuted = true;
+            v1.autoplay = true;
+            v1.playsInline = true;
+            if (v1.srcObject !== stream) v1.srcObject = stream;
+
+            const report = () => {
+                const visibleDiag = document.getElementById('video-diagnostic-visible');
+                const tracks = stream.getTracks().map(t => `${t.kind}:${t.readyState}`).join(', ');
+                if (visibleDiag) {
+                    visibleDiag.textContent = (v1.videoWidth > 0 && v1.videoHeight > 0)
+                        ? `✅ تصویر و صدای دوربین ۱ فعال: ${v1.videoWidth}×${v1.videoHeight} • چرخش: ${state.cam1Rotation}° • (${tracks})`
+                        : `دریافت ترک دوربین ۱ (${tracks})...`;
+                }
+            };
+            v1.onloadedmetadata = () => { v1PlayRemoteCamera(); report(); };
+            v1.onloadeddata = report;
+            v1.onplaying = report;
+            v1PlayRemoteCamera();
+            startAvSyncWatchdog(v1);
+
+            stream.getAudioTracks().forEach(track => { track.enabled = true; });
+            connectStreamToAudioMixer('cam1', stream);
+            report();
+            syncRemoteTallyState();
+        }
+
+        async function forceRefreshVideoStreams() {
+            flushRemoteVideoBuffer('manual');
+            sendRemoteCommand({ type: 'requestKeyFrame' });
+        }
+
+        // ============================================================================
+        // 11. DIRECT PROGRAM SWITCHER & REMOTE COMMANDS
+        // ============================================================================
+        function directCutToProgram(src) {
+            state.pgmSource = src;
+            const lbl = document.getElementById('pgm-source-label');
+            if (lbl) lbl.innerText = src.toUpperCase();
+            document.querySelectorAll('.pgm-btn').forEach(btn => {
+                const active = btn.getAttribute('data-pgm') === src;
+                const isSlate = btn.getAttribute('data-pgm') === 'slate';
+                const spanClass = isSlate ? ' col-span-2' : '';
+                btn.className = (active
+                    ? 'pgm-btn py-2-5 px-2 rounded-xl font-bold text-xs border-2 border-red-500 bg-red-500/20 text-white transition flex flex-col items-center gap-1'
+                    : 'pgm-btn py-2-5 px-2 rounded-xl font-bold text-xs border border-slate-700 bg-slate-800/80 text-slate-300 transition flex flex-col items-center gap-1') + spanClass;
+            });
+            syncRemoteTallyState();
+            syncPgmPlayPauseButtonUI();
+        }
+
+        function togglePgmPlayPause() {
+            const v = document.getElementById('hidden-media-video');
+            const status = document.getElementById('pgm-playback-status');
+            if (!state.mediaPlaylist.length) {
+                if (status) {
+                    status.textContent = '⚠️ ابتدا یک ویدیو در بخش «پخش فیلم و عکس» اضافه کنید';
+                    status.className = 'text-[11px] font-mono text-amber-400';
+                }
+                return;
+            }
+            if (state.mediaPlaylistIndex < 0) {
+                loadPlaylistItem(0, true);
+                syncPgmPlayPauseButtonUI();
+                return;
+            }
+            if (state.mediaType === 'image') {
+                if (state.mediaPlaylistRunning) stopPlaylist();
+                else playPlaylist();
+                syncPgmPlayPauseButtonUI();
+                return;
+            }
+            if (v) {
+                if (v.paused) {
+                    state.mediaPlaylistRunning = true;
+                    v.play().then(() => syncPgmPlayPauseButtonUI()).catch(() => syncPgmPlayPauseButtonUI());
+                } else {
+                    v.pause();
+                    state.mediaPlaylistRunning = false;
+                    syncPgmPlayPauseButtonUI();
+                }
+            }
+        }
+
+        function sendRemoteCommand(cmdObj, throttle = false) {
+            if (throttle) {
+                const now = Date.now();
+                if (now - state.lastCtrlCmdTs < 80) return;
+                state.lastCtrlCmdTs = now;
+            }
+            sendDataChannelMsg(cmdObj);
+        }
+
+        function sendRemoteZoom(val) {
+            const lbl = document.getElementById('remote-zoom-label');
+            if (lbl) lbl.innerText = Number(val).toFixed(1) + 'x';
+            sendRemoteCommand({ type: 'zoom', value: Number(val) }, true);
+        }
+
+        function sendIntercomMessage() {
+            const input = document.getElementById('intercom-input');
+            const text = input.value.trim();
+            if (!text) return;
+            sendRemoteCommand({ type: 'intercom', text });
+            input.value = '';
+        }
+
+        function syncRemoteTallyState() {
+            const pgmUsesCam1 = ['cam1', 'pip', 'pip_lg', 'split', 'split23', 'media'].includes(state.pgmSource);
+            sendRemoteCommand({ type: 'tally', state: pgmUsesCam1 ? 'pgm' : 'idle' });
+        }
+
+        // ============================================================================
+        // 12. GPU CANVAS COMPOSITOR (NATIVE 1280x720 PGM)
+        // ============================================================================
+        let compositorRunning = false;
+
+        function installReactionOverlayDrag() {
+            const canvas = document.getElementById('canvas-pgm');
+            if (!canvas || canvas.dataset.dragInstalled) return;
+            canvas.dataset.dragInstalled = '1';
+            let dragging = false, last = null;
+            canvas.addEventListener('pointerdown', e => {
+                if (!['media', 'pip', 'pip_lg'].includes(state.pgmSource)) return;
+                const r = canvas.getBoundingClientRect();
+                const x = (e.clientX - r.left) / r.width;
+                const y = (e.clientY - r.top) / r.height;
+                const size = state.pgmSource === 'pip_lg' ? 0.25 : (state.reactionOverlay.size || 0.20);
+                if (x >= state.reactionOverlay.x && x <= state.reactionOverlay.x + size && y >= state.reactionOverlay.y && y <= state.reactionOverlay.y + size) {
+                    dragging = true;
+                    last = { x: e.clientX, y: e.clientY };
+                    canvas.setPointerCapture?.(e.pointerId);
+                }
+            });
+            canvas.addEventListener('pointermove', e => {
+                if (!dragging || !last) return;
+                const r = canvas.getBoundingClientRect();
+                const size = state.pgmSource === 'pip_lg' ? 0.25 : (state.reactionOverlay.size || 0.20);
+                state.reactionOverlay.x = Math.max(0, Math.min(1 - size, state.reactionOverlay.x + (e.clientX - last.x) / r.width));
+                state.reactionOverlay.y = Math.max(0, Math.min(1 - size, state.reactionOverlay.y + (e.clientY - last.y) / r.height));
+                last = { x: e.clientX, y: e.clientY };
+            });
+            const end = () => { dragging = false; last = null; };
+            canvas.addEventListener('pointerup', end);
+            canvas.addEventListener('pointercancel', end);
+        }
+
+        function startCanvasCompositorLoop() {
+            if (compositorRunning) return;
+            compositorRunning = true;
+            const cPgm = document.getElementById('canvas-pgm');
+            const ctxPgm = cPgm.getContext('2d', { alpha: false });
+            let frameCount = 0;
+            let lastFpsTime = performance.now();
+            let lastRenderTime = 0;
+            const fpsEl = document.getElementById('fps-counter');
+
+            function renderLoop(timestamp) {
+                if (state.role !== 'director') { compositorRunning = false; return; }
+                const minFrameInterval = state.isRecording ? 32 : 20;
+                if (timestamp - lastRenderTime < minFrameInterval) { requestAnimationFrame(renderLoop); return; }
+                lastRenderTime = timestamp;
+
+                frameCount++;
+                if (timestamp - lastFpsTime >= 1000) {
+                    if (fpsEl) fpsEl.innerText = `${frameCount} FPS`;
+                    frameCount = 0;
+                    lastFpsTime = timestamp;
+                }
+                drawSourceScene(ctxPgm, state.pgmSource, cPgm.width, cPgm.height);
+                requestAnimationFrame(renderLoop);
+            }
+            requestAnimationFrame(renderLoop);
+        }
+
+        function drawSourceScene(ctx, sourceType, w, h) {
+            ctx.fillStyle = '#070b14';
+            ctx.fillRect(0, 0, w, h);
+            const v1 = document.getElementById('hidden-cam1-video');
+
+            if (sourceType === 'cam1') {
+                drawVideoSmart(ctx, v1, 0, 0, w, h, 'CAM 1 (در انتظار تصویر دوربین ۱)', state.cam1Rotation, 'cover', state.cam1Mirror);
+            } else if (sourceType === 'media') {
+                const mediaEl = state.mediaType === 'video' ? document.getElementById('hidden-media-video') : document.getElementById('hidden-media-img');
+                const mw = state.mediaType === 'video' ? mediaEl.videoWidth : mediaEl.naturalWidth;
+                const mh = state.mediaType === 'video' ? mediaEl.videoHeight : mediaEl.naturalHeight;
+                const isPortraitMedia = mw > 0 && mh > mw * 1.08;
+                if (mw > 0 && mh > 0 && isPortraitMedia) {
+                    const split = w * 0.5;
+                    drawVideoSmart(ctx, v1, 0, 0, split, h, 'CAM 1', state.cam1Rotation, 'cover', state.cam1Mirror, { cropStartRatio: state.splitCropStartRatio, fullWidth: w });
+                    drawMediaLayer(ctx, split, 0, w - split, h);
+                } else {
+                    drawMediaLayer(ctx, 0, 0, w, h);
+                    const size = Math.min(w * (state.reactionOverlay.size || 0.20), h * 0.92);
+                    const px = Math.max(0, Math.min(w - size, w * state.reactionOverlay.x));
+                    const py = Math.max(0, Math.min(h - size, h * state.reactionOverlay.y));
+                    ctx.save();
+                    ctx.fillStyle = '#000000';
+                    ctx.fillRect(px - 3, py - 3, size + 6, size + 6);
+                    drawVideoSmart(ctx, v1, px, py, size, size, 'CAM 1', state.cam1Rotation, 'cover', state.cam1Mirror, { cropStartRatio: 0, fullWidth: size * (16 / 9) });
+                    ctx.strokeStyle = '#e2e8f0';
+                    ctx.lineWidth = Math.max(1, w * 0.002);
+                    ctx.strokeRect(px, py, size, size);
+                    ctx.restore();
+                }
+            } else if (sourceType === 'pip') {
+                drawMediaLayer(ctx, 0, 0, w, h);
+                const pw = Math.min(w * 0.20, h * 0.36), ph = pw;
+                const px = Math.max(w * 0.02, Math.min(w - pw - w * 0.02, w * state.reactionOverlay.x));
+                const py = Math.max(h * 0.02, Math.min(h - ph - h * 0.02, h * state.reactionOverlay.y));
+                ctx.save();
+                ctx.fillStyle = '#000000';
+                ctx.fillRect(px - 3, py - 3, pw + 6, ph + 6);
+                drawVideoSmart(ctx, v1, px, py, pw, ph, 'CAM 1', state.cam1Rotation, 'cover', state.cam1Mirror, { cropStartRatio: 0, fullWidth: pw * (16 / 9) });
+                ctx.strokeStyle = '#e2e8f0';
+                ctx.lineWidth = Math.max(2, w * 0.003);
+                ctx.strokeRect(px, py, pw, ph);
+                ctx.restore();
+            } else if (sourceType === 'pip_lg') {
+                drawMediaLayer(ctx, 0, 0, w, h);
+                const pw = Math.min(w * 0.25, h * 0.45), ph = pw;
+                const px = Math.max(w * 0.02, Math.min(w - pw - w * 0.02, w * state.reactionOverlay.x));
+                const py = Math.max(h * 0.02, Math.min(h - ph - h * 0.02, h * state.reactionOverlay.y));
+                ctx.save();
+                ctx.fillStyle = '#000000';
+                ctx.fillRect(px - 3, py - 3, pw + 6, ph + 6);
+                drawVideoSmart(ctx, v1, px, py, pw, ph, 'CAM 1', state.cam1Rotation, 'cover', state.cam1Mirror, { cropStartRatio: 2 / 12, fullWidth: pw * (16 / 9) });
+                ctx.strokeStyle = '#38bdf8';
+                ctx.lineWidth = Math.max(2, w * 0.003);
+                ctx.strokeRect(px, py, pw, ph);
+                ctx.restore();
+            } else if (sourceType === 'split') {
+                const halfW = w / 2 - 4;
+                drawVideoSmart(ctx, v1, 0, 0, halfW, h, 'CAM 1', state.cam1Rotation, 'cover', state.cam1Mirror, { cropStartRatio: state.splitCropStartRatio, fullWidth: w });
+                drawMediaLayer(ctx, halfW + 8, 0, halfW, h);
+            } else if (sourceType === 'split23') {
+                const camW = Math.round((w * 2) / 3) - 3;
+                const mediaX = camW + 6;
+                const mediaW = w - mediaX;
+                drawVideoSmart(ctx, v1, 0, 0, camW, h, 'CAM 1', state.cam1Rotation, 'cover', state.cam1Mirror, { cropStartRatio: state.splitCropStartRatio, fullWidth: w });
+                drawMediaLayer(ctx, mediaX, 0, mediaW, h);
+            } else if (sourceType === 'slate') {
+                ctx.fillStyle = '#060913';
+                ctx.fillRect(0, 0, w, h);
+                ctx.fillStyle = '#ffffff';
+                ctx.font = `900 ${Math.round(w * 0.03)}px sans-serif`;
+                ctx.textAlign = 'center';
+                ctx.fillText('پخش زنده استودیو PRISM', w / 2, h / 2);
+            }
+        }
+
+        function drawVideoSmart(ctx, videoEl, x, y, w, h, label, rotationDeg = 270, fitMode = 'cover', mirror = false, cropOpts = null) {
+            if (videoEl && videoEl.srcObject && videoEl.paused) {
+                videoEl.muted = true;
+                videoEl.play().catch(() => {});
+            }
+            if (videoEl && videoEl.videoWidth > 0 && videoEl.videoHeight > 0) {
+                const rawW = videoEl.videoWidth;
+                const rawH = videoEl.videoHeight;
+                const isRotated90 = (rotationDeg === 90 || rotationDeg === 270);
+                const effW = isRotated90 ? rawH : rawW;
+                const effH = isRotated90 ? rawW : rawH;
+
+                ctx.save();
+                ctx.beginPath();
+                ctx.rect(x, y, w, h);
+                ctx.clip();
+
+                const refW = (cropOpts && cropOpts.fullWidth) ? cropOpts.fullWidth : w;
+                const scale = (fitMode === 'contain') ? Math.min(refW / effW, h / effH) : Math.max(refW / effW, h / effH);
+                const drawW = rawW * scale;
+                const drawH = rawH * scale;
+                const effDrawW = isRotated90 ? drawH : drawW;
+
+                let offsetX = 0;
+                if (cropOpts && typeof cropOpts.cropStartRatio === 'number' && effDrawW > w) {
+                    const desiredStartX = effDrawW * cropOpts.cropStartRatio;
+                    const maxStartX = Math.max(0, effDrawW - w);
+                    const actualStartX = Math.max(0, Math.min(maxStartX, desiredStartX));
+                    offsetX = (effDrawW - w) / 2 - actualStartX;
+                }
+
+                ctx.translate(x + w / 2 + offsetX, y + h / 2);
+                if (rotationDeg !== 0) ctx.rotate((rotationDeg * Math.PI) / 180);
+                if (mirror) ctx.scale(-1, 1);
+
+                const isCam1 = videoEl.id === 'hidden-cam1-video';
+                if (isCam1 && state.colorBoostLevel > 0) {
+                    ctx.filter = state.colorBoostLevel === 1
+                        ? 'saturate(1.42) contrast(1.08) brightness(1.03)'
+                        : 'saturate(1.65) contrast(1.12) brightness(1.04)';
+                }
+                ctx.drawImage(videoEl, -drawW / 2, -drawH / 2, drawW, drawH);
+                if (isCam1 && state.colorBoostLevel > 0) ctx.filter = 'none';
+                ctx.restore();
+            } else {
+                ctx.fillStyle = '#0f172a';
+                ctx.fillRect(x, y, w, h);
+                ctx.fillStyle = '#64748b';
+                ctx.font = `bold ${Math.round(w * 0.022)}px sans-serif`;
+                ctx.textAlign = 'center';
+                ctx.fillText(label, x + w / 2, y + h / 2);
+            }
+        }
+
+        function drawMediaLayer(ctx, x, y, w, h) {
+            if (state.mediaType === 'video') {
+                drawVideoSmart(ctx, document.getElementById('hidden-media-video'), x, y, w, h, 'MEDIA', 0, 'contain', false);
+            } else if (state.mediaType === 'image') {
+                const img = document.getElementById('hidden-media-img');
+                if (img && img.complete && img.naturalWidth > 0) {
+                    const scale = Math.min(w / img.naturalWidth, h / img.naturalHeight);
+                    const dw = img.naturalWidth * scale;
+                    const dh = img.naturalHeight * scale;
+                    ctx.drawImage(img, x + (w - dw) / 2, y + (h - dh) / 2, dw, dh);
+                }
+            } else {
+                ctx.fillStyle = '#17153b';
+                ctx.fillRect(x, y, w, h);
+                ctx.fillStyle = '#e2e8f0';
+                ctx.font = `bold ${Math.round(w * 0.022)}px sans-serif`;
+                ctx.textAlign = 'center';
+                ctx.fillText('پخش مدیا (B-ROLL)', x + w / 2, y + h / 2);
+            }
+        }
+
+        // ============================================================================
+        // 13. MEDIA PLAYER
+        // ============================================================================
+        function handleMediaUpload(e) {
+            const files = Array.from(e.target.files || []);
+            if (!files.length) return;
+            for (const file of files) {
+                if (!(file.type.startsWith('video/') || file.type.startsWith('image/'))) continue;
+                const url = URL.createObjectURL(file);
+                state.mediaObjectUrls.push(url);
+                state.mediaPlaylist.push({ name: file.name, type: file.type.startsWith('video/') ? 'video' : 'image', url, file });
+            }
+            e.target.value = '';
+            renderMediaPlaylist();
+            if (state.mediaPlaylistIndex < 0 && state.mediaPlaylist.length) loadPlaylistItem(0, false);
+        }
+
+        function renderMediaPlaylist() {
+            const list = document.getElementById('media-playlist');
+            if (!list) return;
+            list.replaceChildren();
+            if (!state.mediaPlaylist.length) {
+                const li = document.createElement('li');
+                li.className = 'text-slate-500';
+                li.textContent = 'هنوز فایلی اضافه نشده است.';
+                list.appendChild(li);
+                return;
+            }
+            state.mediaPlaylist.forEach((item, i) => {
+                const li = document.createElement('li');
+                li.className = 'flex items-center gap-1 bg-slate-900 rounded px-2 py-1 ' + (i === state.mediaPlaylistIndex ? 'border border-emerald-500/70' : 'border border-slate-800');
+                const pick = document.createElement('button');
+                pick.className = 'text-right text-slate-200 flex-1 truncate';
+                pick.style.background = 'transparent';
+                pick.textContent = `${i + 1}. ${item.type === 'video' ? '🎬' : '🖼️'} ${item.name}`;
+                pick.onclick = () => cueMediaItemToScreen(i);
+                const up = document.createElement('button');
+                up.textContent = '↑';
+                up.className = 'px-1 text-slate-400';
+                up.style.background = 'transparent';
+                up.disabled = i === 0;
+                up.onclick = () => movePlaylistItem(i, -1);
+                const down = document.createElement('button');
+                down.textContent = '↓';
+                down.className = 'px-1 text-slate-400';
+                down.style.background = 'transparent';
+                down.disabled = i === state.mediaPlaylist.length - 1;
+                down.onclick = () => movePlaylistItem(i, 1);
+                const del = document.createElement('button');
+                del.textContent = '×';
+                del.className = 'px-1 text-red-300';
+                del.style.background = 'transparent';
+                del.onclick = () => removePlaylistItem(i);
+                li.append(pick, up, down, del);
+                list.appendChild(li);
+            });
+        }
+
+        function movePlaylistItem(index, delta) {
+            const target = index + delta;
+            if (target < 0 || target >= state.mediaPlaylist.length) return;
+            [state.mediaPlaylist[index], state.mediaPlaylist[target]] = [state.mediaPlaylist[target], state.mediaPlaylist[index]];
+            if (state.mediaPlaylistIndex === index) state.mediaPlaylistIndex = target;
+            else if (state.mediaPlaylistIndex === target) state.mediaPlaylistIndex = index;
+            renderMediaPlaylist();
+        }
+
+        function removePlaylistItem(index) {
+            const wasCurrent = index === state.mediaPlaylistIndex;
+            state.mediaPlaylist.splice(index, 1);
+            if (!state.mediaPlaylist.length) {
+                stopPlaylist();
+                state.mediaPlaylistIndex = -1;
+                state.mediaType = 'demo';
+                document.getElementById('media-filename').textContent = 'فهرست پخش خالی است';
+                document.getElementById('media-status').textContent = 'چند ویدیو یا عکس انتخاب کنید';
+            } else if (wasCurrent) {
+                loadPlaylistItem(Math.min(index, state.mediaPlaylist.length - 1), false);
+            } else if (index < state.mediaPlaylistIndex) {
+                state.mediaPlaylistIndex--;
+            }
+            renderMediaPlaylist();
+        }
+
+        function syncPgmPlayPauseButtonUI() {
+            const icon = document.getElementById('pgm-play-pause-icon');
+            const label = document.getElementById('pgm-play-pause-label');
+            const status = document.getElementById('pgm-playback-status');
+            const btn = document.getElementById('btn-pgm-play-pause');
+            const v = document.getElementById('hidden-media-video');
+
+            if (state.mediaType === 'video' && v && state.mediaPlaylistIndex >= 0) {
+                if (v.paused) {
+                    if (icon) icon.textContent = '▶';
+                    if (label) label.textContent = 'پخش ویدیو (Play)';
+                    if (status) { status.textContent = '⏸ ویدیو در حالت مکث است (تصویر دوربین زنده است)'; status.className = 'text-[11px] font-mono text-amber-400'; }
+                    if (btn) btn.className = 'bg-amber-500 text-black font-bold text-xs px-3-5 py-1-5 rounded-lg flex items-center gap-1-5 shadow transition';
+                } else {
+                    if (icon) icon.textContent = '⏸';
+                    if (label) label.textContent = 'مکث ویدیو (Pause)';
+                    if (status) { status.textContent = '▶ در حال پخش ویدیو'; status.className = 'text-[11px] font-mono text-emerald-400'; }
+                    if (btn) btn.className = 'bg-emerald-600 text-white font-bold text-xs px-3-5 py-1-5 rounded-lg flex items-center gap-1-5 shadow transition';
+                }
+            } else {
+                if (icon) icon.textContent = '⏯';
+                if (label) label.textContent = 'پخش / مکث ویدیو (Play/Pause)';
+                if (status) { status.textContent = '▶ LIVE • دوربین زنده فعال است'; status.className = 'text-[11px] font-mono text-emerald-400'; }
+                if (btn) btn.className = 'bg-emerald-600 text-white font-bold text-xs px-3-5 py-1-5 rounded-lg flex items-center gap-1-5 shadow transition';
+            }
+        }
+
+        function cueMediaItemToScreen(index) {
+            loadPlaylistItem(index, false);
+            if (!['media', 'pip', 'pip_lg', 'split', 'split23'].includes(state.pgmSource)) directCutToProgram('media');
+            syncPgmPlayPauseButtonUI();
+        }
+
+        function loadPlaylistItem(index, autoplay = false) {
+            if (index < 0 || index >= state.mediaPlaylist.length) return;
+            if (state.imageAdvanceTimer) { clearTimeout(state.imageAdvanceTimer); state.imageAdvanceTimer = null; }
+            const item = state.mediaPlaylist[index];
+            state.mediaPlaylistIndex = index;
+            state.mediaType = item.type;
+            const video = document.getElementById('hidden-media-video');
+            const img = document.getElementById('hidden-media-img');
+
+            if (item.type === 'video') {
+                video.pause();
+                state.mediaPlaylistRunning = Boolean(autoplay);
+                if (video.src !== item.url) { video.src = item.url; video.load(); }
+                img.removeAttribute('src');
+                connectMediaElementToAudioMixer(video);
+                video.onloadeddata = () => {
+                    if (!autoplay && video.paused && video.currentTime === 0) { try { video.currentTime = 0.01; } catch (e) {} }
+                    syncPgmPlayPauseButtonUI();
+                };
+                video.onended = () => {
+                    const mode = document.getElementById('playlist-mode')?.value || state.mediaPlaylistMode || 'sequence';
+                    if (mode === 'single') {
+                        stopPlaylist();
+                        try { video.currentTime = 0; } catch (e) {}
+                        directCutToProgram('cam1');
+                        syncPgmPlayPauseButtonUI();
+                        return;
+                    }
+                    if (!state.mediaPlaylistRunning) { syncPgmPlayPauseButtonUI(); return; }
+                    if (mode === 'sequence' && state.mediaPlaylistIndex < state.mediaPlaylist.length - 1) {
+                        loadPlaylistItem(state.mediaPlaylistIndex + 1, true);
+                    } else {
+                        stopPlaylist();
+                        directCutToProgram('cam1');
+                    }
+                    syncPgmPlayPauseButtonUI();
+                };
+                if (autoplay) {
+                    if (!['media', 'pip', 'pip_lg', 'split', 'split23'].includes(state.pgmSource)) directCutToProgram('media');
+                    video.play().then(() => syncPgmPlayPauseButtonUI()).catch(() => syncPgmPlayPauseButtonUI());
+                } else {
+                    video.pause();
+                }
+            } else {
+                video.pause();
+                video.removeAttribute('src');
+                video.load();
+                img.src = item.url;
+                if (autoplay && !['media', 'pip', 'pip_lg', 'split', 'split23'].includes(state.pgmSource)) directCutToProgram('media');
+                const mode = document.getElementById('playlist-mode')?.value || state.mediaPlaylistMode || 'sequence';
+                if (state.mediaPlaylistRunning && autoplay) {
+                    state.imageAdvanceTimer = setTimeout(() => {
+                        if (mode === 'single') { stopPlaylist(); directCutToProgram('cam1'); }
+                        else if (state.mediaPlaylistRunning && state.mediaPlaylistIndex < state.mediaPlaylist.length - 1) loadPlaylistItem(state.mediaPlaylistIndex + 1, true);
+                        else { stopPlaylist(); directCutToProgram('cam1'); }
+                    }, 5000);
+                }
+            }
+            document.getElementById('media-filename').textContent = item.name;
+            document.getElementById('media-status').textContent = autoplay ? `در حال پخش • ${index + 1} از ${state.mediaPlaylist.length}` : 'آماده روی تصویر • برای پخش دکمه Play را بزنید';
+            renderMediaPlaylist();
+            syncPgmPlayPauseButtonUI();
+        }
+
+        function playPlaylist() {
+            if (!state.mediaPlaylist.length) { document.getElementById('media-status').textContent = 'ابتدا فایل اضافه کنید.'; return; }
+            state.mediaPlaylistMode = document.getElementById('playlist-mode')?.value || 'sequence';
+            state.mediaPlaylistRunning = true;
+            loadPlaylistItem(state.mediaPlaylistIndex >= 0 ? state.mediaPlaylistIndex : 0, true);
+        }
+
+        function stopPlaylist() {
+            state.mediaPlaylistRunning = false;
+            if (state.imageAdvanceTimer) { clearTimeout(state.imageAdvanceTimer); state.imageAdvanceTimer = null; }
+            const v = document.getElementById('hidden-media-video');
+            if (v) v.pause();
+            const status = document.getElementById('media-status');
+            if (status && state.mediaPlaylistIndex >= 0) status.textContent = `متوقف • ${state.mediaPlaylistIndex + 1} از ${state.mediaPlaylist.length}`;
+        }
+
+        function playPlaylistStep(delta) {
+            if (!state.mediaPlaylist.length) return;
+            const next = Math.max(0, Math.min(state.mediaPlaylist.length - 1, (state.mediaPlaylistIndex < 0 ? 0 : state.mediaPlaylistIndex) + delta));
+            loadPlaylistItem(next, true);
+        }
+
+        function toggleMediaPlayback() {
+            const v = document.getElementById('hidden-media-video');
+            if (state.mediaType === 'image') { playPlaylist(); return; }
+            if (v.paused) {
+                state.mediaPlaylistRunning = true;
+                if (!['media', 'pip', 'pip_lg', 'split', 'split23'].includes(state.pgmSource)) directCutToProgram('media');
+                v.play().then(() => syncPgmPlayPauseButtonUI()).catch(() => {});
+            } else {
+                v.pause();
+                state.mediaPlaylistRunning = false;
+                syncPgmPlayPauseButtonUI();
+            }
+        }
+
+        function restartMedia() { if (state.mediaPlaylistIndex >= 0) loadPlaylistItem(state.mediaPlaylistIndex, true); }
+
+        function switchDirectorTab(tab) {
+            ['ptz', 'media'].forEach(t => {
+                const contentEl = document.getElementById(`tab-content-${t}`);
+                const btnEl = document.getElementById(`tab-btn-${t}`);
+                if (contentEl) contentEl.classList.toggle('hidden', t !== tab);
+                if (btnEl) {
+                    if (t === tab) {
+                        btnEl.className = 'py-2-5 text-emerald-400 border-b-2 bg-slate-900/60';
+                        btnEl.style.background = '';
+                    } else {
+                        btnEl.className = 'py-2-5 text-slate-400';
+                        btnEl.style.background = 'transparent';
+                    }
+                }
+            });
+        }
+
+        // ============================================================================
+        // 14. WEBAUDIO MIXER & MP4 RECORDER
+        // ============================================================================
+        function initWebAudioMixer() {
+            if (state.audioCtx) return;
+            try {
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                state.audioCtx = new AudioContextClass({ latencyHint: 'interactive' });
+                state.destNode = state.audioCtx.createMediaStreamDestination();
+                const silentOsc = state.audioCtx.createOscillator();
+                const silentGain = state.audioCtx.createGain();
+                silentGain.gain.value = 0.00001;
+                const zeroOutGain = state.audioCtx.createGain();
+                zeroOutGain.gain.value = 0;
+                silentOsc.frequency.value = 440;
+                silentOsc.connect(silentGain);
+                silentGain.connect(state.destNode);
+                silentGain.connect(zeroOutGain);
+                zeroOutGain.connect(state.audioCtx.destination);
+                silentOsc.start();
+                if (state.audioCtx.state === 'suspended') state.audioCtx.resume().catch(() => {});
+            } catch (e) {}
+        }
+
+        function setVolumeBalance(ch, valPercent) {
+            const pct = Math.max(0, Math.min(200, Number(valPercent) || 0));
+            state.gains[ch] = pct / 100;
+            const lbl = document.getElementById(`vol-${ch}-lbl`);
+            if (lbl) lbl.textContent = `${pct}%`;
+            if (state.gainNodes[ch] && state.audioCtx) {
+                state.gainNodes[ch].gain.setTargetAtTime(state.gains[ch], state.audioCtx.currentTime, 0.03);
+            }
+        }
+
+        function disconnectMixerChannel(channel) {
+            try { if (state.sourceNodes[channel]) state.sourceNodes[channel].disconnect(); } catch (e) {}
+            try { if (state.gainNodes[channel]) state.gainNodes[channel].disconnect(); } catch (e) {}
+            if (channel === 'cam1') {
+                try { if (state.cam1DelayNode) state.cam1DelayNode.disconnect(); } catch (e) {}
+                state.cam1DelayNode = null;
+                state.currentAudioDelaySec = 0;
+            }
+            delete state.sourceNodes[channel];
+            delete state.gainNodes[channel];
+        }
+
+        function connectStreamToAudioMixer(channel, stream) {
+            if (!stream || !stream.getAudioTracks || stream.getAudioTracks().length === 0) {
+                disconnectMixerChannel(channel);
+                return;
+            }
+            initWebAudioMixer();
+            if (!state.audioCtx || !state.destNode) return;
+            try {
+                disconnectMixerChannel(channel);
+                const audioOnlyStream = new MediaStream(stream.getAudioTracks());
+                const source = state.audioCtx.createMediaStreamSource(audioOnlyStream);
+                const gain = state.audioCtx.createGain();
+                gain.gain.value = state.gains[channel] ?? 0.45;
+                if (channel === 'cam1') {
+                    const delayNode = state.audioCtx.createDelay(1.0);
+                    delayNode.delayTime.value = 0;
+                    source.connect(delayNode);
+                    delayNode.connect(gain);
+                    state.cam1DelayNode = delayNode;
+                } else {
+                    source.connect(gain);
+                }
+                gain.connect(state.destNode);
+                state.sourceNodes[channel] = source;
+                state.gainNodes[channel] = gain;
+            } catch (e) { disconnectMixerChannel(channel); }
+        }
+
+        function connectMediaElementToAudioMixer(videoEl) {
+            initWebAudioMixer();
+            if (!state.audioCtx || state.gainNodes['mediaEl']) return;
+            try {
+                const src = state.audioCtx.createMediaElementSource(videoEl);
+                const mDelay = state.audioCtx.createDelay(1.0);
+                mDelay.delayTime.value = (state.mediaSyncDelayMs || 0) / 1000;
+                const gain = state.audioCtx.createGain();
+                gain.gain.value = state.gains.media ?? 1.35;
+                src.connect(mDelay);
+                mDelay.connect(gain);
+                state.mediaAudioDelayNode = mDelay;
+                gain.connect(state.destNode);
+                gain.connect(state.audioCtx.destination);
+                state.gainNodes['media'] = gain;
+                state.gainNodes['mediaEl'] = true;
+            } catch (e) {}
+        }
+
+        function getMp4CandidateMimeTypes(hasAudio = true) {
+            const candidates = hasAudio ? [
+                'video/mp4;codecs="avc1.42E01E, mp4a.40.2"',
+                'video/mp4;codecs=avc1.42E01E,mp4a.40.2',
+                'video/mp4;codecs="avc1.4d401f, mp4a.40.2"',
+                'video/mp4;codecs=avc1,mp4a.40.2',
+                'video/mp4;codecs=h264,aac',
+                'video/mp4;codecs=h264,opus',
+                'video/mp4',
+                'video/webm;codecs=h264,opus',
+                'video/webm;codecs=vp8,opus',
+                'video/webm'
+            ] : [
+                'video/mp4;codecs=avc1.42E01E',
+                'video/mp4;codecs=avc1',
+                'video/mp4;codecs=h264',
+                'video/mp4',
+                'video/webm;codecs=h264',
+                'video/webm'
+            ];
+            const supported = [];
+            if (typeof MediaRecorder !== 'undefined' && typeof MediaRecorder.isTypeSupported === 'function') {
+                for (const mime of candidates) {
+                    try { if (MediaRecorder.isTypeSupported(mime)) supported.push(mime); } catch (e) {}
+                }
+            }
+            return supported;
+        }
+
+        function toggleRecording() {
+            if (state.isRecording) stopProgramRecording();
+            else startProgramRecording().catch(err => {
+                const visible = document.getElementById('recording-status-visible');
+                if (visible) visible.textContent = `ضبط شروع نشد: ${err?.message || err}`;
+            });
+        }
+
+        function togglePauseResumeRecording() {
+            const rec = state.mediaRecorder;
+            if (!rec || !state.isRecording) return;
+            const visible = document.getElementById('recording-status-visible');
+            if (rec.state === 'recording' && typeof rec.pause === 'function') {
+                rec.pause();
+                if (visible) visible.textContent = '⏸ ضبط موقتاً متوقف شد (Paused)';
+            } else if (rec.state === 'paused' && typeof rec.resume === 'function') {
+                rec.resume();
+                if (visible) visible.textContent = '🔴 ضبط مجدداً ادامه یافت (Recording MP4)…';
+            }
+        }
+
+        async function startProgramRecording() {
+            const downloadSlot = document.getElementById('recorded-download-slot');
+            if (downloadSlot) { downloadSlot.classList.add('hidden'); downloadSlot.innerHTML = ''; }
+            const setStatus = (msg) => {
+                const visible = document.getElementById('recording-status-visible');
+                if (visible) visible.textContent = msg;
+            };
+            try {
+                if (state.isRecording) return;
+                if (typeof MediaRecorder === 'undefined') { setStatus('ضبط در این مرورگر پشتیبانی نمی‌شود.'); return; }
+                const cPgm = document.getElementById('canvas-pgm');
+                if (!cPgm) return;
+                if (!compositorRunning && state.role === 'director') startCanvasCompositorLoop();
+                const ctxPgm = cPgm.getContext('2d', { alpha: false });
+                if (ctxPgm) drawSourceScene(ctxPgm, state.pgmSource, cPgm.width, cPgm.height);
+
+                initWebAudioMixer();
+                if (state.audioCtx && state.audioCtx.state === 'suspended') await state.audioCtx.resume().catch(() => {});
+                if (state.remoteCam1Stream) {
+                    state.remoteCam1Stream.getAudioTracks().forEach(t => { t.enabled = true; });
+                    connectStreamToAudioMixer('cam1', state.remoteCam1Stream);
+                }
+
+                const captureFn = cPgm.captureStream || cPgm.mozCaptureStream;
+                if (typeof captureFn !== 'function') { setStatus('این مرورگر از captureStream پشتیبانی نمی‌کند.'); return; }
+                const existingTrack = state.persistentCanvasStream?.getVideoTracks?.()[0];
+                if (!state.persistentCanvasStream || !existingTrack || existingTrack.readyState !== 'live') {
+                    state.persistentCanvasStream = captureFn.call(cPgm, 30);
+                }
+                const videoTrack = state.persistentCanvasStream.getVideoTracks()[0];
+                if (!videoTrack) { setStatus('ترک ویدیوی خروجی ساخته نشد.'); return; }
+
+                const combinedTracks = [videoTrack];
+                const hasCam1OrMediaAudio = Boolean(
+                    state.remoteCam1Stream?.getAudioTracks?.().some(t => t.readyState === 'live') ||
+                    (state.mediaType === 'video' && state.mediaPlaylistRunning)
+                );
+                const mixedAudioTrack = (hasCam1OrMediaAudio && state.audioCtx && state.audioCtx.state === 'running')
+                    ? state.destNode?.stream?.getAudioTracks?.().find(t => t.readyState === 'live')
+                    : null;
+                if (mixedAudioTrack) combinedTracks.push(mixedAudioTrack);
+                const recordingStream = new MediaStream(combinedTracks);
+
+                state.recordedChunks = [];
+                const candidates = getMp4CandidateMimeTypes(!!mixedAudioTrack);
+                const targetVideoBps = 2800000;
+                let recorder = null;
+                let chosenMime = '';
+                const tryConfigs = [
+                    ...candidates.map(m => ({ mimeType: m, videoBitsPerSecond: targetVideoBps, audioBitsPerSecond: 160000 })),
+                    ...candidates.map(m => ({ mimeType: m })),
+                    {}
+                ];
+                for (const cfg of tryConfigs) {
+                    try {
+                        const testRec = Object.keys(cfg).length ? new MediaRecorder(recordingStream, cfg) : new MediaRecorder(recordingStream);
+                        recorder = testRec;
+                        chosenMime = testRec.mimeType || cfg.mimeType || '';
+                        break;
+                    } catch (err) { recorder = null; }
+                }
+                if (!recorder) {
+                    recorder = new MediaRecorder(new MediaStream([videoTrack]));
+                    chosenMime = recorder.mimeType || '';
+                }
+
+                state.activeRecMime = chosenMime;
+                state.mediaRecorder = recorder;
+                recorder.ondataavailable = (e) => { if (e.data && e.data.size > 0) state.recordedChunks.push(e.data); };
+                recorder.onstop = () => {
+                    try { saveRecordedVideo(); } catch (e) { setStatus(`ذخیره فایل ناموفق بود: ${e.message || e}`); }
+                    if (state.recordingTimer) { clearInterval(state.recordingTimer); state.recordingTimer = null; }
+                    state.mediaRecorder = null;
+                };
+                recorder.start();
+
+                state.isRecording = true;
+                state.recordingStartAt = Date.now();
+                const pauseRecBtn = document.getElementById('btn-rec-pause-resume');
+                if (pauseRecBtn) { pauseRecBtn.classList.remove('hidden'); pauseRecBtn.classList.add('inline-flex'); }
+                const btn = document.getElementById('btn-record-pgm');
+                if (btn) btn.className = 'bg-amber-500 text-black font-black text-xs px-3 py-1-5 rounded-lg shadow-lg flex items-center gap-1-5 transition animate-pulse';
+                document.getElementById('btn-record-label').innerText = '⏹ توقف و ذخیره (00:00 • MP4)';
+
+                if (state.recordingTimer) clearInterval(state.recordingTimer);
+                state.recordingTimer = setInterval(() => {
+                    if (!state.isRecording) return;
+                    const sec = Math.max(0, Math.floor((Date.now() - state.recordingStartAt) / 1000));
+                    const mm = String(Math.floor(sec / 60)).padStart(2, '0');
+                    const ss = String(sec % 60).padStart(2, '0');
+                    const lbl = document.getElementById('btn-record-label');
+                    if (lbl) lbl.innerText = `⏹ توقف و ذخیره (${mm}:${ss} • MP4)`;
+                }, 500);
+                setStatus('🔴 در حال ضبط مستر (720p MP4) • چک خودکار همزمانی صدا و تصویر هر ۱ ثانیه فعال است.');
+            } catch (e) {
+                state.isRecording = false;
+                setStatus(`ضبط شروع نشد: ${e?.message || e}`);
+                const label = document.getElementById('btn-record-label');
+                if (label) label.innerText = 'ضبط مستر خروجی (MP4)';
+            }
+        }
+
+        function stopProgramRecording() {
+            const recorder = state.mediaRecorder;
+            const visible = document.getElementById('recording-status-visible');
+            if (state.recordingTimer) { clearInterval(state.recordingTimer); state.recordingTimer = null; }
+            const pauseRecBtn = document.getElementById('btn-rec-pause-resume');
+            if (pauseRecBtn) { pauseRecBtn.classList.add('hidden'); pauseRecBtn.classList.remove('inline-flex'); }
+            const btn = document.getElementById('btn-record-pgm');
+            if (btn) btn.className = 'bg-red-600 text-white font-bold text-xs px-3 py-1-5 rounded-lg shadow-lg flex items-center gap-1-5 transition';
+            if (!recorder || !state.isRecording) return;
+            try {
+                state.isRecording = false;
+                const label = document.getElementById('btn-record-label');
+                if (label) label.innerText = 'در حال ساخت MP4…';
+                if (visible) visible.textContent = 'ضبط متوقف شد؛ در حال ساخت فایل MP4…';
+                if (recorder.state === 'recording' || recorder.state === 'paused') {
+                    try { recorder.requestData(); } catch (e) {}
+                    recorder.stop();
+                } else {
+                    saveRecordedVideo();
+                }
+            } catch (e) { state.isRecording = false; }
+        }
+
+        function saveRecordedVideo() {
+            const chunks = state.recordedChunks || [];
+            const visible = document.getElementById('recording-status-visible');
+            const label = document.getElementById('btn-record-label');
+            const downloadSlot = document.getElementById('recorded-download-slot');
+            if (label) label.innerText = 'ضبط مستر خروجی (MP4)';
+            if (!chunks.length) {
+                if (visible) visible.textContent = 'فایلی ذخیره نشد (حداقل ۲ ثانیه ضبط کنید).';
+                return;
+            }
+            const blob = new Blob(chunks, { type: 'video/mp4' });
+            if (!blob.size) return;
+            if (state.lastRecordedBlobUrl) { try { URL.revokeObjectURL(state.lastRecordedBlobUrl); } catch (e) {} }
+            const url = URL.createObjectURL(blob);
+            state.lastRecordedBlobUrl = url;
+            const fileName = `PRISM_Studio_${Date.now()}.mp4`;
+
+            if (hasAndroidBridge()) {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    try {
+                        window.AndroidBridge.saveMp4Base64(String(reader.result || ''), fileName);
+                    } catch (e) {}
+                };
+                reader.readAsDataURL(blob);
+            } else {
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = fileName;
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+            }
+
+            const sizeMb = (blob.size / (1024 * 1024)).toFixed(2);
+            if (visible) visible.textContent = `✅ ویدیو با موفقیت با فرمت MP4 ذخیره شد (${sizeMb} MB).`;
+            if (downloadSlot) {
+                downloadSlot.innerHTML = `<a href="${url}" download="${fileName}" class="inline-flex items-center gap-1 bg-emerald-600 text-white font-bold text-xs px-3 py-1-5 rounded-lg shadow transition">⬇️ دانلود فایل MP4 (${sizeMb} MB)</a>`;
+                downloadSlot.classList.remove('hidden');
+            }
+        }
+
+        function takeProgramSnapshot() {
+            const cPgm = document.getElementById('canvas-pgm');
+            const a = document.createElement('a');
+            a.href = cPgm.toDataURL('image/png');
+            a.download = `Snapshot_${Date.now()}.png`;
+            a.click();
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            setCam1Rotation(270);
+        });
+    </script>
+</body>
+</html>
